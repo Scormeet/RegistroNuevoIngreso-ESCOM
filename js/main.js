@@ -22,7 +22,9 @@
     [ Validate ]*/
     var name = $('.validate-input input[name="name"]');
     var email = $('.validate-input input[name="email"]');
-    var message = $('.validate-input textarea[name="message"]');
+    var curp = $('.validate-input input[name="curp"]');
+    var number = $('.validate-input input[name="number"]');
+    //var message = $('.validate-input textarea[name="message"]');
 
 
     $('.validate-form').on('submit',function(){
@@ -39,10 +41,16 @@
             check=false;
         }
 
-        if($(message).val().trim() == ''){
-            showValidate(message);
+        if($(curp).val().trim().match(/^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/)== null){
+            showValidate(curp);
             check=false;
-        }
+        }  
+        
+
+        if($(number).val().trim().match(/^[0-9]*$/) == null){
+            showValidate(number);
+            check=false;
+        }   
 
         return check;
     });

@@ -560,6 +560,7 @@ textarea.input2 + .focus-input2::after {
   opacity: 1;
 }
 
+
 @media (max-width: 992px) {
   .alert-validate::before {
     visibility: visible;
