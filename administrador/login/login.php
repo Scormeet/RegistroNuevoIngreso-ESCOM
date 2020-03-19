@@ -10,9 +10,15 @@ if(isset($_POST['submit'])){
 
     echo 'Verificando datos....<br/><br/>';
     
+    //Revisarlo en la BD
+    
+
+
+
     session_start();
     $_SESSION['id'] = "12345";
     $_SESSION['user'] = $name;
+
     echo 'Sesion iniciada con: <br/>';
     print_r($_SESSION);
 
