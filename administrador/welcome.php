@@ -10,15 +10,16 @@
     <title>
         Bienvenido
     </title>
-    <link rel="icon" type="image/png" href="../images/logoescom.png"/>
+    <link rel="icon" type="image/png" href="../images/logo-escom-white.png"/>
     <link rel="stylesheet" type="text/css" href="./../vendor/bootstrap/css/bootstrap.min.css">
     <script src="./../js/chart.js"></script>
 </head>
 
-<body>
+<body >
        <!-- Navbar -->
-       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/RegistroNuevoIngreso-ESCOM/administrador/welcome.php">EIIS-ESCOM</a>
+       <!-- <nav class="navbar navbar-expand-lg navbar-light bg-primary" > -->
+       <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #D3A2FF;">
+        <a class="navbar-brand" href="/RegistroNuevoIngreso-ESCOM/administrador/welcome.php"><b>EIIS-ESCOM</b></a>
         <button class=" navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -36,10 +37,8 @@
                         <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/modificar/">Modificar</a>
                     </li>
                 </ul>
-                <form class="my-2 my-lg-0" action="logout.php" method="GET">
-                    <li class="navbar-nav nav-item active">
-                        <button type="submit"><a class="nav-link">Cerrar Sesion</a></button>
-                    </li>
+                <form class="my-2 my-lg-0 " action="logout.php" method="GET">
+                        <button class="btn btn-outline-success" type="submit"><a class="nav-link">Cerrar Sesion</a></button>
                 </form>
             </div>
     </nav>
@@ -58,20 +57,32 @@
                 <h5>10/02/2020</h5>
                 <h5>11/02/2020</h5>
                 <h5>12/02/2020</h5>
+
+                <hr/>
+                <h4>Horarios de aplicacion de examen</h4>
+                <h5>12:00-1:30</h5>
+                <h5>1:30-3:00</h5>
+                <h5>3:00-4:30</h5>
+                <br/>
+                <button type="button" class="btn btn-primary btn-lg">Configuración</button>
             </div>
             <div class="col-sm">
                 <canvas id="barChar" width="400" height="400"></canvas>
             </div>
         </div>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Cupo</h1>
+                <p class="lead">Grafica de alumnos inscritos en los examenes</p>
+            </div>
+        </div>
         <div class="row">
-        <div class="col-sm">
-
-        </div>
-        <div class="col-sm">
-            <canvas id="doughnut" width="400" height="400"></canvas>
-        </div>
-        <div class="col-sm">
-
+            <div class="col-sm">
+            </div>
+            <div class="col-sm">
+                <canvas id="doughnut" width="400" height="400"></canvas>
+            </div>
+            <div class="col-sm">
         </div>
     </div>
 

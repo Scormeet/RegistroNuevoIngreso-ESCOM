@@ -26,7 +26,6 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item ">
@@ -75,29 +74,29 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Horario</th>
+                        <th scope="col">Salón</th>
+                        <th scope="col">Cupos</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td>12:00-1:30</td>
+                        <td>1010</td>
+                        <td>37</td>
                     </tr>
                     <tr>
                         <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
+                        <td>1:30-3:00</td>
+                        <td>1011</td>
+                        <td>12</td>
                     </tr>
                     <tr>
                         <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
+                        <td>3:00-4:30</td>
+                        <td>1012</td>
+                        <td>14</td>
                     </tr>
                 </tbody>
             </table>
@@ -109,29 +108,29 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Horario</th>
+                        <th scope="col">Salón</th>
+                        <th scope="col">Cupos</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <th scope="row">4</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td>12:00-1:30</td>
+                        <td>1010</td>
+                        <td>37</td>
                     </tr>
                     <tr>
                         <th scope="row">5</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
+                        <td>1:30-3:00</td>
+                        <td>1011</td>
+                        <td>12</td>
                     </tr>
                     <tr>
                         <th scope="row">6</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
+                        <td>3:00-4:30</td>
+                        <td>1012</td>
+                        <td>14</td>
                     </tr>
                 </tbody>
             </table>
@@ -143,29 +142,29 @@
                 <thead>
                     <tr>
                         <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
+                        <th scope="col">Horario</th>
+                        <th scope="col">Salón</th>
+                        <th scope="col">Cupos</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <th scope="row">7</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <td>12:00-1:30</td>
+                        <td>1010</td>
+                        <td>37</td>
                     </tr>
                     <tr>
                         <th scope="row">8</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
+                        <td>1:30-3:00</td>
+                        <td>1011</td>
+                        <td>12</td>
                     </tr>
                     <tr>
                         <th scope="row">9</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
+                        <td>3:00-4:30</td>
+                        <td>1012</td>
+                        <td>14</td>
                     </tr>
                 </tbody>
             </table>
