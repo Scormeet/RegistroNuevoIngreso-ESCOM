@@ -12,9 +12,6 @@ if(isset($_POST['submit'])){
     
     //Revisarlo en la BD
     
-
-
-
     session_start();
     $_SESSION['id'] = "12345";
     $_SESSION['user'] = $name;

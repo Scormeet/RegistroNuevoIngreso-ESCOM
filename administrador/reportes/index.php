@@ -5,6 +5,7 @@
     } 
 ?>
 <html>
+
 <head>
     <title>
         Reportes
@@ -46,7 +47,7 @@
     <!-- END Navbar -->
     <br />
     <div class="container" align="center">
-        <h1 class="display-4">Reportes de los <b>exámenes</b>&nbsp;<i class="fas fa-edit"></i></h1>
+        <h1 class="display-4">Reportes de los <b>exámenes</b>&nbsp; &nbsp;<i class="fas fa-edit"></i></h1>
     </div>
     <hr />
     <br />
@@ -65,7 +66,7 @@
     </div>
     <br />
     <div id="registros">
-        <div id="1" class="container"  style="display: none">
+        <div id="1" class="container" style="display: none">
             <div class="row">
                 <div class="col-sm">
                     <canvas id="barChar1" width="150px" height="100px"></canvas>
@@ -105,93 +106,93 @@
                     </table>
 
                 </div>
-                </div>
             </div>
+        </div>
 
-            <div id="2" class="container" style="display: none">
-                <div class="row">
-                    <div class="col-sm">
-                        <canvas id="barChar2" width="150px" height="100px"></canvas>
-                    </div>
-                    <div class="col-sm">
-                        <h3>11 de Febrero</h3>
-                        <br />
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Horario</th>
-                                    <th scope="col">Salón</th>
-                                    <th scope="col">Cupos</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">4</th>
-                                    <td>12:00-1:30</td>
-                                    <td>1010</td>
-                                    <td>37</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">5</th>
-                                    <td>1:30-3:00</td>
-                                    <td>1011</td>
-                                    <td>12</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">6</th>
-                                    <td>3:00-4:30</td>
-                                    <td>1012</td>
-                                    <td>14</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+        <div id="2" class="container" style="display: none">
+            <div class="row">
+                <div class="col-sm">
+                    <canvas id="barChar2" width="150px" height="100px"></canvas>
                 </div>
-            </div>
-
-            <div id="3" class="container" style="display: none">
-                <div class="row">
-                    <div class="col-sm">
-                        <canvas id="barChar3" width="150px" height="100px"></canvas>
-                    </div>
-                    <div class="col-sm">
-                        <h3>12 de Febrero</h3>
-                        <br />
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Horario</th>
-                                    <th scope="col">Salón</th>
-                                    <th scope="col">Cupos</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">7</th>
-                                    <td>12:00-1:30</td>
-                                    <td>1010</td>
-                                    <td>37</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">8</th>
-                                    <td>1:30-3:00</td>
-                                    <td>1011</td>
-                                    <td>12</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">9</th>
-                                    <td>3:00-4:30</td>
-                                    <td>1012</td>
-                                    <td>14</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="col-sm">
+                    <h3>11 de Febrero</h3>
+                    <br />
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Horario</th>
+                                <th scope="col">Salón</th>
+                                <th scope="col">Cupos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>12:00-1:30</td>
+                                <td>1010</td>
+                                <td>37</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>1:30-3:00</td>
+                                <td>1011</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>3:00-4:30</td>
+                                <td>1012</td>
+                                <td>14</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
+
+        <div id="3" class="container" style="display: none">
+            <div class="row">
+                <div class="col-sm">
+                    <canvas id="barChar3" width="150px" height="100px"></canvas>
+                </div>
+                <div class="col-sm">
+                    <h3>12 de Febrero</h3>
+                    <br />
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Horario</th>
+                                <th scope="col">Salón</th>
+                                <th scope="col">Cupos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td>12:00-1:30</td>
+                                <td>1010</td>
+                                <td>37</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td>1:30-3:00</td>
+                                <td>1011</td>
+                                <td>12</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">9</th>
+                                <td>3:00-4:30</td>
+                                <td>1012</td>
+                                <td>14</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 </body>
 

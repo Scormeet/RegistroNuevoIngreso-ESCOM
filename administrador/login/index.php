@@ -11,6 +11,7 @@
     <div class="container">
         <div class="row d-flex justify-content-center mx-auto">
             <div class="col-md-6 col-xs-12 div-style">
+                <a class="link " href="/RegistroNuevoIngreso-ESCOM/">Regresar</a>
             <form action="./login.php" method="POST">
                 <div class="d-flex justify-content-center mx-auto main-label" >
                     <h2>Login</h2>

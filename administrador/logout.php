@@ -1,5 +1,4 @@
 <?php 
-
 session_start();
 if(isset($_GET)){
     if (isset($_SESSION["user"])){
@@ -8,5 +7,4 @@ if(isset($_GET)){
     } 
     header("Location: ../administrador/login/");
 }
-
 ?>
