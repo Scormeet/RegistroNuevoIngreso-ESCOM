@@ -17,12 +17,12 @@
                 </div>
                 <div class="form-group input-group">
                     <span class="input-group-addon"><i class="fas fa-user"></i></span>
-                    <input id="nomUsu" type="text" class="form-control" name="nomUsu" placeholder="Numero de trabajador">
+                    <input id="nomUsu" type="text" class="form-control" name="nomUsu" placeholder="Numero de trabajador" required>
                 </div>
                 
                 <div class="form-group input-group">
                     <span class="input-group-addon"><i class="fas fa-unlock-alt"></i></span>
-                    <input id="passsword" type="password" class="form-control" name="password" placeholder="Contraseña">
+                    <input id="passsword" type="password" class="form-control" name="password" placeholder="Contraseña" required>
                 </div>
                 <div class="form-group justify-content-center d-flex">
                     <button type="submit" name="submit" class="btn btn-primary button-submit">Login</button>

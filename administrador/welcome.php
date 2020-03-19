@@ -16,10 +16,8 @@
 </head>
 
 <body >
-       <!-- Navbar -->
-       <!-- <nav class="navbar navbar-expand-lg navbar-light bg-primary" > -->
-       <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #D3A2FF;">
-        <a class="navbar-brand" href="/RegistroNuevoIngreso-ESCOM/administrador/welcome.php"><b>EIIS-ESCOM</b></a>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #BCB1EB;">
+        <a class="navbar-brand" href="/RegistroNuevoIngreso-ESCOM/administrador/welcome.php">EIIS-ESCOM</a>
         <button class=" navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -51,7 +49,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <h4>Examenes activos <b>27</b></h4>
+                <h4>Examenes activos</h4><h3 style="color: red"><b>27</b></h3>
                 <hr/>
                 <h4>Fechas de aplicación de examen</h4>
                 <h5>10/02/2020</h5>
@@ -64,10 +62,10 @@
                 <h5>1:30-3:00</h5>
                 <h5>3:00-4:30</h5>
                 <br/>
-                <button type="button" class="btn btn-primary btn-lg">Configuración</button>
+                <button class="btn btn-primary btn-lg" onclick="location.href = '/RegistroNuevoIngreso-ESCOM/administrador/modificar/';" type="button">Configuración</button>
             </div>
             <div class="col-sm">
-                <canvas id="barChar" width="400" height="400"></canvas>
+                <canvas id="barChar" width="350" height="300"></canvas>
             </div>
         </div>
         <div class="jumbotron jumbotron-fluid">
