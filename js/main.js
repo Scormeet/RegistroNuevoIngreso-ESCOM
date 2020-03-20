@@ -21,9 +21,12 @@
     /*==================================================================
     [ Validate ]*/
     var name = $('.validate-input input[name="name"]');
+    var namep = $('.validate-input input[name="namep"]');
+    var namem = $('.validate-input input[name="namem"]');
     var email = $('.validate-input input[name="email"]');
     var curp = $('.validate-input input[name="curp"]');
     var number = $('.validate-input input[name="number"]');
+    var picker = $('.validate-input input[name="picker"]');
     //var message = $('.validate-input textarea[name="message"]');
 
 
@@ -32,6 +35,23 @@
 
         if($(name).val().trim() == ''){
             showValidate(name);
+            check=false;
+        }
+
+        if($(namep).val().trim() == ''){
+            showValidate(namep);
+            check=false;
+        }
+
+        if($(namem).val().trim() == ''){
+            showValidate(namem);
+            check=false;
+        }
+
+
+
+        if($(picker).val().trim() == ''){
+            showValidate(picker);
             check=false;
         }
 

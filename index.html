@@ -21,6 +21,8 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<!--===============================================================================================-->
+	<link href="https://stackpath.bootsrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./datePicker/jquery.datetimepicker.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -64,7 +66,7 @@
 						</div>
 
 						<div class="wrap-input2 validate-input" data-validate="Fecha de Nacimiento es requerido">
-							<input class="input2" type="text" name="date">
+							<input class="input2 form-control" type="text" name="name" id="picker">
 							<span class="focus-input2" data-placeholder="Fecha de Nacimiento"></span>
 						</div>
 
@@ -99,7 +101,7 @@
 						</div>
 
 						<div class="wrap-input2 validate-input" data-validate="Código Postal es requerido">
-							<input class="input2" type="text" name="number">
+							<input class="input2" type="number" name="number">
 							<span class="focus-input2" data-placeholder="Código Postal"></span>
 						</div>
 
@@ -109,12 +111,12 @@
 						</div>
 
 						<div class="wrap-input2 validate-input" data-validate="Telefono o Celular es requerido">
-							<input class="input2" type="text" name="number">
+							<input class="input2" type="number" name="number">
 							<span class="focus-input2" data-placeholder="Telefono o Celular"></span>
 						</div>
 
 						<div class="wrap-input2 validate-input" data-validate="Ingrese un Correo Electrónico Valido">
-							<input class="input2" type="text" name="email">
+							<input class="input2" type="email" name="email">
 							<span class="focus-input2" data-placeholder="Correo"></span>
 						</div>
 					</div>
@@ -192,6 +194,21 @@
 		gtag('js', new Date());
 
 		gtag('config', 'UA-23581568-13');
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootsrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+	<script src="./datePicker/jquery.datetimepicker.full.min.js"></script>
+	<script>
+		$('#picker').datetimepicker({
+			timepicker: false,
+			datepicket: true,
+			format: 'd-m-Y',
+			value: '',
+			weeks: true
+		})
 	</script>
 
 </body>
