@@ -2,7 +2,7 @@
     session_start();
     if(!isset($_SESSION['user'])){
         header("Location: ../administrador/login/");
-    } 
+    } else require_once('./../../mysqli_connect.php');
 ?>
 <html>
 
@@ -53,157 +53,113 @@
     <br />
     <div class="container">
         <div class="row">
-            <div class="col-sm" align="center">
-                <button class="btn btn-warning" onClick="showRegistry(1)" type="button">10 de Febrero</button>
-            </div>
-            <div class="col-sm" align="center">
-                <button class="btn btn-warning" onClick="showRegistry(2)" type="button">11 de Febrero</button>
-            </div>
-            <div class="col-sm" align="center">
-                <button class="btn btn-warning" onClick="showRegistry(3)" type="button">12 de Febrero</button>
-            </div>
+            <?php
+             $sql = "select fecha from fecha;";
+             $resultFecha = mysqli_query($conn,$sql);
+             $resultCheckFecha = mysqli_num_rows($resultFecha);
+             $cont = 1;
+             if($resultCheckFecha>0){
+               while($row = mysqli_fetch_assoc($resultFecha)){
+                    $fechasArray[]=$row;
+                   echo "<div class='col-sm' align='center'>";
+                   echo "<button class='btn btn-warning' onClick='showRegistry(".$cont.")' type='button'>".$row["fecha"]."</button>";
+                   echo "</div>";
+                   $cont++;
+                   }
+             } else echo "Sin fechas";
+            ?>
         </div>
     </div>
     <br />
     <div id="registros">
-        <div id="1" class="container" style="display: none">
-            <div class="row">
-                <div class="col-sm">
-                    <canvas id="barChar1" width="150px" height="100px"></canvas>
-                </div>
-                <div class="col-sm">
-                    <h3>10 de Febrero</h3>
-                    <br />
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Horario</th>
-                                <th scope="col">Salón</th>
-                                <th scope="col">Cupos</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>12:00-1:30</td>
-                                <td>1010</td>
-                                <td>37</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>1:30-3:00</td>
-                                <td>1011</td>
-                                <td>12</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>3:00-4:30</td>
-                                <td>1012</td>
-                                <td>14</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                </div>
-            </div>
-        </div>
-
-        <div id="2" class="container" style="display: none">
-            <div class="row">
-                <div class="col-sm">
-                    <canvas id="barChar2" width="150px" height="100px"></canvas>
-                </div>
-                <div class="col-sm">
-                    <h3>11 de Febrero</h3>
-                    <br />
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Horario</th>
-                                <th scope="col">Salón</th>
-                                <th scope="col">Cupos</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td>12:00-1:30</td>
-                                <td>1010</td>
-                                <td>37</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">5</th>
-                                <td>1:30-3:00</td>
-                                <td>1011</td>
-                                <td>12</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">6</th>
-                                <td>3:00-4:30</td>
-                                <td>1012</td>
-                                <td>14</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div id="3" class="container" style="display: none">
-            <div class="row">
-                <div class="col-sm">
-                    <canvas id="barChar3" width="150px" height="100px"></canvas>
-                </div>
-                <div class="col-sm">
-                    <h3>12 de Febrero</h3>
-                    <br />
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">Horario</th>
-                                <th scope="col">Salón</th>
-                                <th scope="col">Cupos</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">7</th>
-                                <td>12:00-1:30</td>
-                                <td>1010</td>
-                                <td>37</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">8</th>
-                                <td>1:30-3:00</td>
-                                <td>1011</td>
-                                <td>12</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">9</th>
-                                <td>3:00-4:30</td>
-                                <td>1012</td>
-                                <td>14</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
+        <?php
+        for($i = 1; $i<$cont+1; $i++){
+            echo "<div id='".$i."' class='container' style='display: none'>";
+            echo "<div class='row'>";
+            echo "<div class='col-sm'>";
+            echo "<canvas id='barChar".$i."' width='150px' height='100px'></canvas>";
+            echo "</div>";
+            echo "<div class='col-sm'>";
+            echo "<h3>".((object)($fechasArray[$i-1]))->fecha."</h3><br />"; //3423423423423432
+            echo "<table class='table'>";
+            echo "<thead>
+                <tr>
+                    <th scope='col'>#</th>
+                    <th scope='col'>Horario</th>
+                    <th scope='col'>Salón</th>
+                    <th scope='col'>Cupos</th>
+                </tr>
+                </thead>";
+            echo "<tbody><tr>";
+            $sql = "select idExamen,fecha,horaInicio,horaFinalización,salon,cupos from examen INNER JOIN fecha ON examen.Fecha_idfecha = fecha.idfecha INNER JOIN horario ON examen.Horario_idHorario = horario.idhorario INNER JOIN salon ON examen.Salon_idSalon = salon.idSalon where fecha='".((object)($fechasArray[$i-1]))->fecha."';";
+            $resultExamen = mysqli_query($conn,$sql);
+            $resultCheckExamen = mysqli_num_rows($resultExamen);
+            $cont = 1;
+            if($resultCheckExamen>0){
+            while($row = mysqli_fetch_assoc($resultExamen)){
+                $output[]=$row;
+                echo "<th scope='row'>".$cont."</th>";
+                echo "<td>".$row["horaInicio"]."-".$row["horaFinalización"]."</td>";
+                echo "<td>".$row["salon"]."</td>";
+                echo "<td>".$row["cupos"]."</td>";
+                echo "</tr>";
+                $cont++;
+                }
+            } else echo "Sin fechas";
+            echo "</tbody>";
+            echo "</table>";
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+            
+            //Generating Chart Information to show
+                echo "<script>
+                var ctx = document.getElementById('barChar".$i."').getContext('2d');
+                var myChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['12:00-1:30', '1:30-3:00', '3:00-4:30', '4:30-6:00'],
+                        datasets: [{
+                            data: [4, 12, 5, 3],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(255, 99, 132, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(255, 99, 132, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                                }
+                            }]
+                        }
+                    }
+                });
+            </script>";
+        }
+        ?>
     </div>
 </body>
 
-<script>
+<!-- <script>
     var ctx = document.getElementById('barChar1').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
             labels: ['12:00-1:30', '1:30-3:00', '3:00-4:30', '4:30-6:00'],
             datasets: [{
-                label: 'Grupos llenos',
+                label: 'Grupos llenos1',
                 data: [4, 12, 5, 3],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
@@ -230,74 +186,6 @@
             }
         }
     });
-
-    var ctx = document.getElementById('barChar2').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['12:00-1:30', '1:30-3:00', '3:00-4:30', '4:30-6:00'],
-            datasets: [{
-                label: 'Grupos llenos',
-                data: [4, 12, 5, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(255, 99, 132, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(255, 99, 132, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-
-    var ctx = document.getElementById('barChar3').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['12:00-1:30', '1:30-3:00', '3:00-4:30', '4:30-6:00'],
-            datasets: [{
-                label: 'Grupos llenos',
-                data: [4, 12, 5, 3],
-                backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(255, 99, 132, 0.2)'
-                ],
-                borderColor: [
-                    'rgba(255, 99, 132, 1)',
-                    'rgba(54, 162, 235, 1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(255, 99, 132, 1)'
-                ],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-</script>
+</script> -->
 
 </html>

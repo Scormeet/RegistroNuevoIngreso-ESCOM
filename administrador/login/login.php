@@ -2,25 +2,26 @@
 
 if(isset($_POST['submit'])){
     $name= $_POST['nomUsu'];
-    $password= $_POST['password'];
+    $pass= $_POST['password'];
 
-    print_r($_POST);
-    echo '<br/>Nombre de usuario a enviar a la BD: '.$name.'<br/>';
-    echo 'password a enviar a la BD: '.$password;
-
-    echo 'Verificando datos....<br/><br/>';
-    
     //Revisarlo en la BD
+    if($name && $pass){
+        require_once('./../../mysqli_connect.php');
+        $sql = "select * from administrador where NumTrabajador='".$name."'AND Contraseña='".$pass."';";
+        $result = mysqli_query($conn,$sql);
+        $resultCheck = mysqli_num_rows($result);
     
-    session_start();
-    $_SESSION['id'] = "12345";
-    $_SESSION['user'] = $name;
-
-    echo 'Sesion iniciada con: <br/>';
-    print_r($_SESSION);
-
-    header("Location: ../welcome.php");
-}
+        if($resultCheck>0){
+            while($row = mysqli_fetch_assoc($result)){
+            session_start();
+            $_SESSION['user'] = $name;
+            header("Location: ../welcome.php");
+            }
+        } else echo "no existe que sad";
+    } else 
+        echo "Datos no valido";
+} else
+    echo "que haces aqui perro";
 
 
 ?>

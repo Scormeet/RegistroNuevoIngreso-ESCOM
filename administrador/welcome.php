@@ -2,7 +2,7 @@
     session_start();
     if(!isset($_SESSION['user'])){
         header("Location: ../administrador/login/");
-    }
+    } else require_once('./../mysqli_connect.php');
 ?>
 <html>
 
@@ -51,18 +51,42 @@
         <div class="row">
             <div class="col-sm">
                 <h4>Examenes activos</h4>
-                <h3 style="color: red"><b>27</b></h3>
+                <h3 style="color: red">
+                <?php 
+                  $sql = "select COUNT(idExamen)as count from examen;";
+                  $result = mysqli_query($conn,$sql);
+                  $resultCheck = mysqli_num_rows($result);
+                  if($resultCheck>0){
+                    while($row = mysqli_fetch_assoc($result)){
+                        echo $row["count"];
+                        }
+                  } else echo "Ninguno";
+                ?>
+                </h3>
                 <hr />
                 <h4>Fechas de aplicación de examen</h4>
-                <h5>10/02/2020</h5>
-                <h5>11/02/2020</h5>
-                <h5>12/02/2020</h5>
-
+                  <?php
+                   $sql = "select fecha from fecha;";
+                   $result = mysqli_query($conn,$sql);
+                   $resultCheck = mysqli_num_rows($result);
+                   if($resultCheck>0){
+                     while($row = mysqli_fetch_assoc($result)){
+                         echo "<h5>".$row["fecha"]."</h5>";
+                         }
+                   } else echo "Sin fechas";
+                  ?>
                 <hr />
                 <h4>Horarios de aplicacion de examen</h4>
-                <h5>12:00-1:30</h5>
-                <h5>1:30-3:00</h5>
-                <h5>3:00-4:30</h5>
+                <?php
+                   $sql = "select HoraInicio,HoraFinalización from horario;";
+                   $result = mysqli_query($conn,$sql);
+                   $resultCheck = mysqli_num_rows($result);
+                   if($resultCheck>0){
+                     while($row = mysqli_fetch_assoc($result)){
+                         echo "<h5>".$row["HoraInicio"]."-".$row["HoraFinalización"]."</h5>";
+                         }
+                   } else echo "Sin fechas";
+                  ?>
                 <br />
                 <button class="btn btn-primary btn-lg"
                     onclick="location.href = '/RegistroNuevoIngreso-ESCOM/administrador/modificar/';"
@@ -87,8 +111,6 @@
             <div class="col-sm">
             </div>
         </div>
-
-
         <script>
             var ctx = document.getElementById('barChar').getContext('2d');
             var myChart = new Chart(ctx, {
