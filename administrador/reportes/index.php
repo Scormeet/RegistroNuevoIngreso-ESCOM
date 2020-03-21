@@ -17,41 +17,46 @@
     <script src="./../../js/chart.js"></script>
     <script>
         window.chartColors = {
-        red: 'rgb(255, 99, 132)',
+        red: 'rgb(255, 121, 121)',
         orange: 'rgb(255, 159, 64)',
-        yellow: 'rgb(255, 205, 86)',
+        yellow: 'rgb(247, 255, 121)',
         green: 'rgb(75, 192, 192)',
         blue: 'rgb(54, 162, 235)',
         purple: 'rgb(153, 102, 255)',
-        grey: 'rgb(201, 203, 207)'
+        grey: 'rgb(201, 203, 207)',
+        brown: 'rgb(240, 127, 103)',
+        green: 'rgb(171, 254, 115)',
+        turquish: 'rgb(230, 121, 255)'
     };
     </script>
 </head>
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #BCB1EB;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#F5EEF8;">
         <a class="navbar-brand" href="/RegistroNuevoIngreso-ESCOM/administrador/welcome.php">EIIS-ESCOM</a>
         <button class=" navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
-                    <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/welcome.php">Inicio</a>
-                </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/reportes/">Reportes <span
+                    <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/welcome.php">Inicio<span
                             class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/reportes/">Reportes </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/modificar/">Modificar</a>
                 </li>
-            </ul>
+                </ul>
             <form class="my-2 my-lg-0 " action="logout.php" method="GET">
-                <button class="btn btn-outline-success" type="submit"><a class="nav-link">Cerrar Sesion</a></button>
+                <button class="btn btn-outline-info" type="submit"><a class="nav-link">Cerrar Sesion</a></button>
             </form>
+            
         </div>
     </nav>
     <!-- END Navbar -->

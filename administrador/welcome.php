@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #BCB1EB;">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#F5EEF8;">
         <a class="navbar-brand" href="/RegistroNuevoIngreso-ESCOM/administrador/welcome.php">EIIS-ESCOM</a>
         <button class=" navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,10 +35,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/modificar/">Modificar</a>
                 </li>
-            </ul>
+                </ul>
             <form class="my-2 my-lg-0 " action="logout.php" method="GET">
-                <button class="btn btn-outline-success" type="submit"><a class="nav-link">Cerrar Sesion</a></button>
+                <button class="btn btn-outline-info" type="submit"><a class="nav-link">Cerrar Sesion</a></button>
             </form>
+            
         </div>
     </nav>
     <!-- END Navbar -->
@@ -88,7 +89,7 @@
                    } else echo "Sin fechas";
                   ?>
                 <br />
-                <button class="btn btn-primary btn-lg"
+                <button class="btn btn-lg" style="background-color: #A9DFBF !important;"
                     onclick="location.href = '/RegistroNuevoIngreso-ESCOM/administrador/modificar/';"
                     type="button">Configuración</button>
             </div>
@@ -96,6 +97,7 @@
                 <canvas id="barChar" width="350" height="300"></canvas>
             </div>
         </div>
+        <br/>
         <div class="jumbotron jumbotron-fluid">
             <div class="container">
                 <h1 class="display-4">Cupo</h1>
@@ -135,5 +137,5 @@
                 }
             });
         </script>
-</body>
+    </body>
 </html>
