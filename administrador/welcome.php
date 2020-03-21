@@ -102,15 +102,6 @@
                 <p class="lead">Grafica de alumnos inscritos en los examenes</p>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm">
-            </div>
-            <div class="col-sm">
-                <canvas id="doughnut" width="400" height="400"></canvas>
-            </div>
-            <div class="col-sm">
-            </div>
-        </div>
         <script>
             var ctx = document.getElementById('barChar').getContext('2d');
             var myChart = new Chart(ctx, {
@@ -143,42 +134,6 @@
                     }
                 }
             });
-
-            var ctx2 = document.getElementById('doughnut').getContext('2d');
-            var myPieChart = new Chart(ctx2, {
-                type: 'pie',
-                data: {
-                    labels: ['10/02/2020', '11/02/2020', '12/02/2020'],
-                    datasets: [{
-                        label: 'Grupos llenos',
-                        data: [12, 5, 3],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true
-                            }
-                        }]
-                    }
-                }
-            });
         </script>
-
-
 </body>
-
 </html>
-;

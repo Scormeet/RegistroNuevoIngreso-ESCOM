@@ -17,7 +17,11 @@ if(isset($_POST['submit'])){
             $_SESSION['user'] = $name;
             header("Location: ../welcome.php");
             }
-        } else echo "no existe que sad";
+        } else {
+            header("Location: ./index.php");
+            exit;
+        }
+       
     } else 
         echo "Datos no valido";
 } else
