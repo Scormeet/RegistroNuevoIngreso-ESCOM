@@ -15,10 +15,10 @@ if(isset($_POST['submit'])){
             while($row = mysqli_fetch_assoc($result)){
             session_start();
             $_SESSION['user'] = $name;
-            header("Location: ../welcome.php");
+            header("Location: ../welcome/welcome.html");
             }
         } else {
-            header("Location: ./index.php");
+            header("Location: ./index.html");
             exit;
         }
        
