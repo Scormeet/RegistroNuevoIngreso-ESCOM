@@ -36,7 +36,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/welcome/welcome.html">Inicio<span
+                    <a class="nav-link"
+                        href="/RegistroNuevoIngreso-ESCOM/administrador/welcome/welcome.html">Inicio<span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
@@ -116,7 +117,7 @@
                     type="button">Configuración</button>
             </div>
             <div class="col-sm" align="center">
-                <h4>Examenes llenos<button class="btn">&nbsp;&nbsp;Ver más</button></h4> <br />
+                <h4>Examenes llenos<button  onclick="location.href = '/RegistroNuevoIngreso-ESCOM/administrador/reportes/index.html';" class="btn">&nbsp;&nbsp;Ver más</button></h4> <br />
                 <canvas id="barChar" width="350" height="300"></canvas>
             </div>
         </div>
@@ -127,15 +128,21 @@
                 <p class="lead">Grafica de alumnos inscritos en los examenes</p>
             </div>
         </div>
+
         <script>
-            data = {
-                labels: ['Horario']
-            };
+            var data = {};
             var ctx = document.getElementById('barChar').getContext('2d');
             var myChart = new Chart(ctx, {
                 type: 'bar',
                 data: data,
                 options: {
+                    animation: {
+                        duration: 0 // general animation time
+                    },
+                    title: {
+                        display: true,
+                        text: 'Examenes llenos por fecha'
+                    },
                     scales: {
                         yAxes: [{
                             ticks: {
@@ -144,23 +151,29 @@
                         }]
                     }
                 }
-            });    
-        </script>
-        <div id="graph"></div>
-        <script>
-            $.ajax(
-                'graph_data.php',
-                {
-                    success: function (data) {
-                        $('#graph').html(data);
-                    },
-                    error: function () {
-                        alert('There was some error performing the AJAX call!');
-                    }
-                }
-            );
+            });
+            setInterval(function () {
+                fetch_data();
+            }, 500);
         </script>
 
+        <script>
+            function fetch_data() {
+                $.ajax(
+                    'graph_data.php',
+                    {
+                        success: function (response) {
+                            var JSONGraph = JSON.parse(response);
+                            myChart.data = JSONGraph;
+                            myChart.update();
+                        },
+                        error: function () {
+                            alert('There was some error performing the AJAX call!');
+                        }
+                    }
+                );
+            }
+        </script>
 </body>
 
 </html>

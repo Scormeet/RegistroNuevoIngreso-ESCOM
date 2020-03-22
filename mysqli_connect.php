@@ -12,7 +12,4 @@
   if (!$conn) {
       die("Connection failed: " . mysqli_connect_error());
   }
-  echo '<script>';
-  echo 'console.log('. json_encode( 'Conexion establecida con la BD' ) .')';
-  echo '</script>';
 ?>
