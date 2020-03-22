@@ -1,7 +1,6 @@
 <?php
     require_once('./../../mysqli_connect.php');
 
-    
     $sql = "select fecha from fecha;";
     $result = mysqli_query($conn,$sql);
     $resultCheck = mysqli_num_rows($result);
@@ -20,12 +19,12 @@
   
 
     $colorArray = array(
-    "red"  => "rgb(255, 121, 121)",
+    "rgb(185, 247, 167)"  => "rgb(185, 247, 167)",
     );
 
      $data = array();
      $data['data'] = $array;
-     $data['backgroundColor'] = (string)array_rand($colorArray,1);;
+     $data['backgroundColor'] = (string)array_rand($colorArray,1);
 
 
     echo json_encode( array (

@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <title>
         Reportes
@@ -7,32 +8,28 @@
     <link rel="icon" type="image/png" href="../../images/logo-escom-white.png" />
     <link rel="stylesheet" type="text/css" href="./../../vendor/bootstrap/css/bootstrap.min.css">
     <style>
-        table {
-        overflow-y:scroll;
-        height:350px;
-        display:block;
-        width: 100%;
-        }   
+     
     </style>
     <script src="https://kit.fontawesome.com/661a586d03.js" crossorigin="anonymous"></script>
     <script src="./../../vendor/jquery/jquery-3.2.1.min.js"></script>
-    <script src="./../../js/reporte.js?4"></script>
+    <script src="./../../js/reporte.js?6"></script>
     <script src="./../../js/chart.js"></script>
     <script>
         window.chartColors = {
-        red: 'rgb(255, 121, 121)',
-        orange: 'rgb(255, 159, 64)',
-        yellow: 'rgb(247, 255, 121)',
-        green: 'rgb(75, 192, 192)',
-        blue: 'rgb(54, 162, 235)',
-        purple: 'rgb(153, 102, 255)',
-        grey: 'rgb(201, 203, 207)',
-        brown: 'rgb(240, 127, 103)',
-        green: 'rgb(171, 254, 115)',
-        turquish: 'rgb(230, 121, 255)'
-    };
+            red: 'rgb(255, 121, 121)',
+            orange: 'rgb(255, 159, 64)',
+            yellow: 'rgb(247, 255, 121)',
+            green: 'rgb(75, 192, 192)',
+            blue: 'rgb(54, 162, 235)',
+            purple: 'rgb(153, 102, 255)',
+            grey: 'rgb(201, 203, 207)',
+            brown: 'rgb(240, 127, 103)',
+            green: 'rgb(171, 254, 115)',
+            turquish: 'rgb(230, 121, 255)'
+        };
     </script>
 </head>
+
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#F5EEF8;">
@@ -45,7 +42,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/welcome/welcome.html">Inicio<span
+                    <a class="nav-link"
+                        href="/RegistroNuevoIngreso-ESCOM/administrador/welcome/welcome.html">Inicio<span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
@@ -54,11 +52,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/modificar/">Modificar</a>
                 </li>
-                </ul>
+            </ul>
             <form class="my-2 my-lg-0 " action="./../logout.php" method="GET">
                 <button class="btn btn-outline-info" type="submit"><a class="nav-link">Cerrar Sesion</a></button>
             </form>
-            
+
         </div>
     </nav>
     <!-- END Navbar -->
@@ -82,25 +80,44 @@
                         }
                     }
                 );
+                // setInterval(function () {
+                    // $('#fechas').load("active_fechas.php").fadeIn("slow");
+                // }, 100);
             </script>
         </div>
     </div>
     <br />
     <div id="registros">
         <div id="graph"></div>
-            <script>
+        <script>
+            fetch_graph();
+            function fetch_graph() {
                 $.ajax(
                     'graph_data.php',
                     {
-                        success: function (data) {
-                            $('#graph').html(data);
+                        type: "POST",
+                        data: {"selector": selector},
+                        success: function (response) {
+                            var JSONresponse = JSON.parse(response);
+                            $('#graph').html(JSONresponse["table"]);
+                            $.each(JSONresponse.datasets[0], function (index, item) {
+                                window["myChart" + (index+1)].data.labels = JSONresponse.label;
+                                window["myChart" + (index+1)].data.datasets.push({"data" : item});
+                                // window["myChart" + (index+1)].data.datasets[0] = {"backgroundColor" : JSONresponse["backgroundColor"]};
+                                window["myChart" + (index+1)].update();
+                            });
                         },
                         error: function () {
                             alert('There was some error performing the AJAX call!');
                         }
                     }
                 );
-            </script>
+            }
+            setInterval(function () {
+                fetch_graph();
+            }, 2000);
+        </script>
     </div>
 </body>
+
 </html>
