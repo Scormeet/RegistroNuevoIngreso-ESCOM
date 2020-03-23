@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="../../images/logo-escom-white.png" />
     <link rel="stylesheet" type="text/css" href="./../../vendor/bootstrap/css/bootstrap.min.css">
     <style>
-     
+
     </style>
     <script src="https://kit.fontawesome.com/661a586d03.js" crossorigin="anonymous"></script>
     <script src="./../../vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -96,15 +96,17 @@
                     'graph_data.php',
                     {
                         type: "POST",
-                        data: {"selector": selector},
+                        data: { "selector": selector },
                         success: function (response) {
                             var JSONresponse = JSON.parse(response);
+                            console.log(JSONresponse);
                             $('#graph').html(JSONresponse["table"]);
+                            $.each(JSONresponse.labels, function (index, item) {
+                                window["myChart" + (index + 1)].data.labels = item;
+                            });
                             $.each(JSONresponse.datasets[0], function (index, item) {
-                                window["myChart" + (index+1)].data.labels = JSONresponse.label;
-                                window["myChart" + (index+1)].data.datasets.push({"data" : item});
-                                // window["myChart" + (index+1)].data.datasets[0] = {"backgroundColor" : JSONresponse["backgroundColor"]};
-                                window["myChart" + (index+1)].update();
+                                window["myChart" + (index + 1)].data.datasets.push({ "data": item });
+                                window["myChart" + (index + 1)].update();
                             });
                         },
                         error: function () {
@@ -115,7 +117,7 @@
             }
             setInterval(function () {
                 fetch_graph();
-            }, 2000);
+            }, 5000);
         </script>
     </div>
 </body>

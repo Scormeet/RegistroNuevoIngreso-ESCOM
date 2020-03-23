@@ -7,6 +7,6 @@
     if($resultCheck>0){
         while($row = mysqli_fetch_assoc($result)){
             echo "<h5>".$row["HoraInicio"]."-".$row["HoraFin"]."</h5>";
-            }
+        }
     } else echo "Sin fechas";
 ?> 
