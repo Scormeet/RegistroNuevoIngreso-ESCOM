@@ -2,7 +2,7 @@
   // Variables de conexion BD
   $servername = "localhost";
   $username = "root";
-  $password = "yeyo1253";//"N0M3L0";
+  $password = "N0M3L0";
   $dbname  = "ingreso";
 
   // Create connection
