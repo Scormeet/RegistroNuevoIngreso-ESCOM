@@ -5,6 +5,7 @@
     if(isset($_POST["selector"])){
         $str = "";
         $div_active = (int)$_POST["selector"];
+        $scrollPosition = (int)$_POST["scrollNumber"];
         $sql = "select fecha from fecha;";
         $resultFecha = mysqli_query($conn,$sql);
         $resultCheckFecha = mysqli_num_rows($resultFecha);
@@ -36,13 +37,13 @@
                     <th scope='col'># Examen</th>
                     <th scope='col'>Horario</th>
                     <th scope='col'>Salón</th>
-                    <th scope='col'>Cupos</th>
+                    <th scope='col'>Inscritos</th>
                 </tr>
                 </thead>";
             $str .= "<tbody><tr>";
             
             //Genera las tablas con su informacion
-            $sql = "select idExamen,fecha,horaInicio,HoraFin,salon,cupos from examen INNER JOIN fecha ON examen.Fecha_idfecha = fecha.idfecha INNER JOIN horario ON examen.Horario_idHorario = horario.idhorario INNER JOIN salon ON examen.Salon_idSalon = salon.idSalon where fecha='".((object)($fechasArray[$i-1]))->fecha."';";
+            $sql = "select idExamen,fecha,horaInicio,HoraFin,salon,inscritos from examen INNER JOIN fecha ON examen.Fecha_idfecha = fecha.idfecha INNER JOIN horario ON examen.Horario_idHorario = horario.idhorario INNER JOIN salon ON examen.Salon_idSalon = salon.idSalon where fecha='".((object)($fechasArray[$i-1]))->fecha."';";
             $resultExamen = mysqli_query($conn,$sql);
             $resultCheckExamen = mysqli_num_rows($resultExamen);
             $cont = 1;
@@ -51,7 +52,7 @@
                     $str .= "<th scope='row'>".$row["idExamen"]."</th>";
                     $str .= "<td>".$row["horaInicio"]."-".$row["HoraFin"]."</td>";
                     $str .= "<td>".$row["salon"]."</td>";
-                    $str .= "<td>".$row["cupos"]."</td>";
+                    $str .= "<td>".$row["inscritos"]."</td>";
                     $str .= "</tr>";
                     $output[]=$row;
                     $cont++;
@@ -93,7 +94,7 @@
         $labels = array();
         $data = array();
         for($j = 0; $j<sizeof($fechasArray);$j++){
-            $sql = "select(200-sum(f1.cupos))AS inscritos,horario.HoraInicio,horario.HoraFin,f1.Fecha from(select examen.Horario_idHorario,examen.cupos,fecha.Fecha FROM fecha INNER JOIN examen ON Examen.Fecha_idFecha=fecha.idFecha where fecha.Fecha='".((object)($fechasArray[$j]))->fecha."')AS F1 inner join horario on F1.Horario_idHorario=horario.idHorario group by horario.idHorario;";
+            $sql = "select(sum(f1.inscritos))AS Alumnos_inscritos,horario.HoraInicio,horario.HoraFin,f1.Fecha  From (SELECT examen.Horario_idHorario,examen.inscritos,fecha.Fecha FROM fecha INNER JOIN examen ON Examen.Fecha_idFecha=fecha.idFecha where fecha.Fecha='".((object)($fechasArray[$j]))->fecha."')AS F1 inner join horario on F1.Horario_idHorario=horario.idHorario group by horario.idHorario;";
             $result = mysqli_query($conn,$sql);
             $resultCheck = mysqli_num_rows($result);
             array_push($labels,[]);
@@ -101,12 +102,13 @@
             if($resultCheck>0){
                 while($row = mysqli_fetch_assoc($result)){
                     array_push($labels[$j],$row["HoraInicio"]."-".$row["HoraFin"]);
-                    array_push($data[$j],$row["inscritos"]);
+                    array_push($data[$j],$row["Alumnos_inscritos"]);
                 }
             }
         }
         $colorArray = array("rgb(185, 247, 167)"  => "rgb(185, 247, 167)");
         $backgroundColor = (string)array_rand($colorArray,1);
+        $str.= "<script>window.scrollTo(0,".$scrollPosition."); </script>";
         echo json_encode( array (
             'table' => $str,
             'labels' => $labels,

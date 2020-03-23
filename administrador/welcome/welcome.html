@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <title>
         Bienvenido
@@ -32,7 +31,6 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -50,7 +48,6 @@
             <form class="my-2 my-lg-0 " action="./../logout.php" method="GET">
                 <button class="btn btn-outline-info" type="submit"><a class="nav-link">Cerrar Sesion</a></button>
             </form>
-
         </div>
     </nav>
     <!-- END Navbar -->
@@ -96,7 +93,7 @@
                     );
                 </script>
                 <hr />
-                <h4>Horarios de aplicacion de examen</h4>
+                <h4>Horarios de aplicación de examen</h4>
                 <div id="horarios"></div>
                 <script>
                     $.ajax(
@@ -130,7 +127,6 @@
                 <p class="lead">Grafica de alumnos inscritos en los examenes</p>
             </div>
         </div>
-
         <script>
             var data = {};
             var ctx = document.getElementById('barChar').getContext('2d');
@@ -159,7 +155,6 @@
                 fetch_data();
             }, 500);
         </script>
-
         <script>
             function fetch_data() {
                 $.ajax(
@@ -179,5 +174,4 @@
             }
         </script>
 </body>
-
 </html>

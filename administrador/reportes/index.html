@@ -96,9 +96,14 @@
                     'graph_data.php',
                     {
                         type: "POST",
-                        data: { "selector": selector },
+                        data: {
+                            "selector": selector,
+                            "scrollNumber": window.pageYOffset || document.documentElement.scrollTop
+                        },
                         success: function (response) {
                             var JSONresponse = JSON.parse(response);
+                            console.log(window.pageYOffset || document.documentElement.scrollTop);
+
                             console.log(JSONresponse);
                             $('#graph').html(JSONresponse["table"]);
                             $.each(JSONresponse.labels, function (index, item) {
@@ -117,7 +122,7 @@
             }
             setInterval(function () {
                 fetch_graph();
-            }, 5000);
+            }, 10000);
         </script>
     </div>
 </body>
