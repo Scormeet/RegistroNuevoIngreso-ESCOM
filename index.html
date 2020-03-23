@@ -23,6 +23,8 @@
 	<!--===============================================================================================-->
 	<link href="https://stackpath.bootsrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 	<link href="./datePicker/jquery.datetimepicker.min.css" rel="stylesheet">
+	<!--<script src='https://www.google.com/recaptcha/api.js'></script>-->
+	<!--<script src='https://www.google.com/recaptcha/api.js?hl=es'></script>-->
 </head>
 
 <body>
@@ -71,12 +73,50 @@
 						</div>
 
 						<div class="wrap-input2 validate-input" data-validate="Lugar de Nacimiento es requerido">
-							<input class="input2" type="text" name="placen">
+							<datalist id="lugNac">
+								<option value="Aguascalientes">
+								<option value="Baja California">
+								<option value="Baja California Sur">
+								<option value="Campeche">
+								<option value="Chiapas">
+								<option value="Chihuahua">
+								<option value="Coahuila">
+								<option value="Colima">
+								<option value="Ciudad de M&eacute;xico">
+								<option value="Durango">
+								<option value="Estado de M&eacute;xico">
+								<option value="Guanajuato">
+								<option value="Guerrero">
+								<option value="Hidalgo">
+								<option value="Jalisco">
+								<option value="Michoac&aacute;n">
+								<option value="Moreos">
+								<option value="Nayarit">
+								<option value="Nuevo Le&oacute;n">
+								<option value="Oaxaca">
+								<option value="Puebla">
+								<option value="Quer&eacute;taro">
+								<option value="Quintana Roo">
+								<option value="San Luis Potos&iacute;">
+								<option value="Sinaloa">
+								<option value="Sonora">
+								<option value="Tabasco">
+								<option value="Tamaulipas">
+								<option value="Tlaxcala">
+								<option value="Veracruz">
+								<option value="Yucat&aacute;n">
+								<option value="Zacatecas">
+							  </datalist>
+							<input list="lugNac" class="input2 list" type="text" name="placen">
 							<span class="focus-input2" data-placeholder="Lugar de Nacimiento"></span>
 						</div>
 
 						<div class="wrap-input2 validate-input" data-validate="Sexo es Requerido">
-							<input class="input2" type="text" name="sex">
+							<datalist id="sexo">
+								<option value="Masculino">
+								<option value="Femenino">
+							</datalist>
+							<input list="sexo" class="input2" type="text" name="sex">
 							<span class="focus-input2" data-placeholder="Sexo "></span>
 						</div>
 
@@ -111,7 +151,7 @@
 						</div>
 
 						<div class="wrap-input2 validate-input" data-validate="Ingrese un Nùmero Telefónico Válido">
-							<input class="input2" type="tel" name="tel">
+							<input class="input2" type="number" name="tel">
 							<span class="focus-input2" data-placeholder="Telefono o Celular"></span>
 						</div>
 
@@ -125,13 +165,59 @@
 
 					<div class="procedencia">
 						<div class="wrap-input2 validate-input" data-validate="Institución de Procedencia es requerido">
-							<input class="input2" type="text" name="institute">
+							<datalist id="institucion">
+								<option value="IPN">
+								<option value="UNAM">
+								<option value="COLBACH">
+								<option value="CONALEP">
+								<option value="DGB">
+								<option value="UEMSTIS">
+								<option value="UEMSTAyCM">
+								<option value="UEMSTAyCM">
+								<option value="UAEM">
+								<option value="Otra">
+							</datalist>
+							<input list="institucion" class="input2" type="text" name="institute">
 							<span class="focus-input2" data-placeholder="Institución de Procedencia"></span>
 						</div>
 
 						<div class="wrap-input2 validate-input"
 							data-validate="Entidad Federativa de Escuela de Procedencia es requerido">
-							<input class="input2" type="text" name="placep">
+							<datalist id="lugProc">
+								<option value="Aguascalientes">
+								<option value="Baja California">
+								<option value="Baja California Sur">
+								<option value="Campeche">
+								<option value="Chiapas">
+								<option value="Chihuahua">
+								<option value="Coahuila">
+								<option value="Colima">
+								<option value="Ciudad de M&eacute;xico">
+								<option value="Durango">
+								<option value="Estado de M&eacute;xico">
+								<option value="Guanajuato">
+								<option value="Guerrero">
+								<option value="Hidalgo">
+								<option value="Jalisco">
+								<option value="Michoac&aacute;n">
+								<option value="Moreos">
+								<option value="Nayarit">
+								<option value="Nuevo Le&oacute;n">
+								<option value="Oaxaca">
+								<option value="Puebla">
+								<option value="Quer&eacute;taro">
+								<option value="Quintana Roo">
+								<option value="San Luis Potos&iacute;">
+								<option value="Sinaloa">
+								<option value="Sonora">
+								<option value="Tabasco">
+								<option value="Tamaulipas">
+								<option value="Tlaxcala">
+								<option value="Veracruz">
+								<option value="Yucat&aacute;n">
+								<option value="Zacatecas">
+							  </datalist>
+							<input list="lugProc" class="input2" type="text" name="placep">
 							<span class="focus-input2" data-placeholder="Entidad Federativa de Escuela de Procedencia"></span>
 						</div>
 
@@ -141,18 +227,28 @@
 						</div>
 
 						<div class="wrap-input2 validate-input" data-validate="Área del Conocimiento es requerido">
-							<input class="input2" type="text" name="area">
+							<datalist id="areac">
+								<option value="F&iacute;sico-Matem&aacute;ticas">
+								<option value="M&eacute;dico-Biol&oacute;gicas">
+								<option value="Sociales-Administr&aacute;tivas">
+							</datalist>
+							<input list="areac"class="input2" type="text" name="area">
 							<span class="focus-input2" data-placeholder="Área del Conocimiento"></span>
 						</div>
 
-						<div class="wrap-input2 validate-input" data-validate="Promedio es requerido">
+						<div class="wrap-input2 validate-input" data-validate="Ingresa Promedio con un solo punto decimal">
 							<input class="input2" type="text" name="prom">
 							<span class="focus-input2" data-placeholder="Promedio"></span>
 						</div>
 
 						<div class="wrap-input2 validate-input" data-validate="Opción es requerido">
-							<input class="input2" type="text" name="choice">
-							<span class="focus-input2" data-placeholder="ESCOM fue:"></span>
+							<datalist id="opcion">
+								<option value="1ra Opci&oacute;n">
+								<option value="2da Opci&oacute;n">
+								<option value="3ra Opci&oacute;n">
+							</datalist>
+							<input list="opcion" class="input2" type="text" name="choice">
+							<span class="focus-input2" data-placeholder="ESCOM fue tu:"></span>
 						</div>
 					</div>
 
@@ -166,6 +262,7 @@
 							</button>
 						</div>
 					</div>
+					<!--<div class="g-recaptcha" data-sitekey="6LfPOuMUAAAAABrXQOjK5LjeOmk2uqp5xGE3pbuc"></div>-->
 
 				</form>
 			</div>
