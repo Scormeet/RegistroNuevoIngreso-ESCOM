@@ -29,7 +29,9 @@
         };
     </script>
 </head>
+<script>
 
+</script>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#F5EEF8;">
@@ -91,19 +93,15 @@
         <div id="graph"></div>
         <script>
             fetch_graph();
-            function fetch_graph() {
+            function fetch_graph(){
                 $.ajax(
                     'graph_data.php',
                     {
                         type: "POST",
-                        data: {
-                            "selector": selector,
-                            "scrollNumber": window.pageYOffset || document.documentElement.scrollTop
-                        },
+                        data: { "selector": selector,
+                                "scrollNumber": window.pageYOffset || document.documentElement.scrollTop },
                         success: function (response) {
                             var JSONresponse = JSON.parse(response);
-                            console.log(window.pageYOffset || document.documentElement.scrollTop);
-
                             console.log(JSONresponse);
                             $('#graph').html(JSONresponse["table"]);
                             $.each(JSONresponse.labels, function (index, item) {
