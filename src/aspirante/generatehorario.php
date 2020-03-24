@@ -26,7 +26,7 @@ if(isset($_POST)){
     if($nombre && $paterno && $materno && $fecha_nac && $lugar_nac && $sexo && $curp && $cyn && $colonia
         && $cp && $delegacion && $telefono && $email && $ins_proc && $ent_proc && $escuela && $area 
         && $promedio && $eleccion) {
-            require_once('./../mysqli_connect.php');
+            require_once('./../../config/mysqli_connect.php');
 
             $sql = "select * from aspirantes where CURP='".$curp."';";
             $result = mysqli_query($conn,$sql);
@@ -60,6 +60,7 @@ if(isset($_POST)){
                 //echo mysqli_error();
             }
         }else{
+            window.location
             echo "EL ALUMNO YA HA SIDO REGISTRADO";
             //echo mysqli_error();
         }        
