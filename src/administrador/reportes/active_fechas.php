@@ -1,5 +1,5 @@
 <?php
-    require_once('./../../mysqli_connect.php');
+    require_once('./../../../config/mysqli_connect.php');
     
     //Obtiene las fechas que se haran el examen
     $sql = "select fecha from fecha;";

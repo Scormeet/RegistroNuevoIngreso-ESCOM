@@ -4,7 +4,7 @@
         $pass= $_POST['password'];
 
         if($name && $pass){
-            require_once('./../../mysqli_connect.php');
+            require_once('./config/mysqli_connect.php');
             $sql = "select * from administrador where NumTrabajador='".$name."'AND Contraseña='".$pass."';";
             $result = mysqli_query($conn,$sql);
             $resultCheck = mysqli_num_rows($result);
@@ -13,10 +13,10 @@
                 while($row = mysqli_fetch_assoc($result)){
                     session_start();
                     $_SESSION['user'] = $name;
-                    header("Location: ../welcome/welcome.html");
+                    header("Location: ./administrador");
                 }
             } else {
-                header("Location: ./index.html");
+                header("Location: ./login");
                 exit;
             }
         } else 

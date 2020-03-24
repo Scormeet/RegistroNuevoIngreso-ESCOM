@@ -4,10 +4,10 @@
         Bienvenido
     </title>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="../../images/logo-escom-white.png" />
-    <link rel="stylesheet" type="text/css" href="./../../vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="./images/logo-escom-white.png" />
+    <link rel="stylesheet" type="text/css" href="./vendor/bootstrap/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="./../../js/chart.js"></script>
+    <script src="./js/chart.js"></script>
     <script>
         window.chartColors = {
             red: 'rgb(255, 121, 121)',
@@ -26,7 +26,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#F5EEF8;">
-        <a class="navbar-brand" href="/RegistroNuevoIngreso-ESCOM/administrador/welcome/welcome.html">EIIS-ESCOM</a>
+        <a class="navbar-brand" href="/RegistroNuevoIngreso-ESCOM/administrador">EIIS-ESCOM</a>
         <button class=" navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -35,17 +35,17 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link"
-                        href="/RegistroNuevoIngreso-ESCOM/administrador/welcome/welcome.html">Inicio<span
+                        href="/RegistroNuevoIngreso-ESCOM/administrador">Inicio<span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/reportes/">Reportes </a>
+                    <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/reportes">Reportes </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/modificar/">Modificar</a>
+                    <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/modificar">Modificar</a>
                 </li>
             </ul>
-            <form class="my-2 my-lg-0 " action="./../logout.php" method="GET">
+            <form class="my-2 my-lg-0 " action="/RegistroNuevoIngreso-ESCOM/src/administrador/logout.php" method="GET">
                 <button class="btn btn-outline-info" type="submit"><a class="nav-link">Cerrar Sesion</a></button>
             </form>
         </div>
@@ -53,7 +53,7 @@
     <!-- END Navbar -->
     <br />
     <div class="container">
-        <h1 class="display-4"> Bienvenido <b><?php echo $_SESSION['user']?></b></h1>
+        <!-- <h1 class="display-4"> Bienvenido <b><?php echo $_SESSION['user']?></b></h1> -->
     </div>
     <br />
     <div class="container">
@@ -64,7 +64,7 @@
                     <div id="examenes"></div>
                     <script>
                         $.ajax(
-                            'active_exams.php',
+                            './src/administrador/welcome/active_exams.php',
                             {
                                 success: function (data) {
                                     $('#examenes').html(data);
@@ -81,7 +81,7 @@
                 <div id="fechas"></div>
                 <script>
                     $.ajax(
-                        'active_fechas.php',
+                        './src/administrador/welcome/active_fechas.php',
                         {
                             success: function (data) {
                                 $('#fechas').html(data);
@@ -97,7 +97,7 @@
                 <div id="horarios"></div>
                 <script>
                     $.ajax(
-                        'active_horarios.php',
+                        './src/administrador/welcome/active_horarios.php',
                         {
                             success: function (data) {
                                 $('#horarios').html(data);
@@ -158,11 +158,10 @@
         <script>
             function fetch_data() {
                 $.ajax(
-                    'graph_data.php',
+                    './src/administrador/welcome/graph_data.php',
                     {
                         success: function (response) {
                             var JSONGraph = JSON.parse(response);
-                            console.log(JSONGraph);
                             myChart.data = JSONGraph;
                             myChart.update();
                         },

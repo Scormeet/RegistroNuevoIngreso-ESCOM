@@ -1,6 +1,6 @@
 <?php
     //Genera la cantidad de registros por cada fecha
-    require_once('./../../mysqli_connect.php');
+    require_once('./../../../config/mysqli_connect.php');
     
     if(isset($_POST["selector"])){
         $str = "";

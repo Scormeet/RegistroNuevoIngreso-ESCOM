@@ -1,5 +1,5 @@
 <?php 
-    require_once('./../../mysqli_connect.php');
+    require_once('./../../../config/mysqli_connect.php');
 
     if(isset($_GET)) {
         $sql = "select COUNT(idExamen)as count from examen;";

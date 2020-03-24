@@ -5,6 +5,6 @@
             session_unset();
             session_destroy();
         } 
-        header("Location: ../administrador/login/");
+        header("Location: /RegistroNuevoIngreso-ESCOM/login");
     }
 ?>

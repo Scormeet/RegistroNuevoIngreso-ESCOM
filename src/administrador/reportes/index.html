@@ -5,15 +5,15 @@
         Reportes
     </title>
     <meta charset="UTF-8">
-    <link rel="icon" type="image/png" href="../../images/logo-escom-white.png" />
-    <link rel="stylesheet" type="text/css" href="./../../vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="/RegistroNuevoIngreso-ESCOM/images/logo-escom-white.png" />
+    <link rel="stylesheet" type="text/css" href="/RegistroNuevoIngreso-ESCOM/vendor/bootstrap/css/bootstrap.min.css">
     <style>
 
     </style>
     <script src="https://kit.fontawesome.com/661a586d03.js" crossorigin="anonymous"></script>
-    <script src="./../../vendor/jquery/jquery-3.2.1.min.js"></script>
-    <script src="./../../js/reporte.js?6"></script>
-    <script src="./../../js/chart.js"></script>
+    <script src="/RegistroNuevoIngreso-ESCOM/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <script src="/RegistroNuevoIngreso-ESCOM/js/reporte.js?6"></script>
+    <script src="/RegistroNuevoIngreso-ESCOM/js/chart.js"></script>
     <script>
         window.chartColors = {
             red: 'rgb(255, 121, 121)',
@@ -35,7 +35,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color:#F5EEF8;">
-        <a class="navbar-brand" href="/RegistroNuevoIngreso-ESCOM/administrador/welcome/welcome.html">EIIS-ESCOM</a>
+        <a class="navbar-brand" href="/RegistroNuevoIngreso-ESCOM/administrador">EIIS-ESCOM</a>
         <button class=" navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -45,20 +45,19 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                     <a class="nav-link"
-                        href="/RegistroNuevoIngreso-ESCOM/administrador/welcome/welcome.html">Inicio<span
+                        href="/RegistroNuevoIngreso-ESCOM/administrador">Inicio<span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/reportes/">Reportes </a>
+                    <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/reportes">Reportes </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/modificar/">Modificar</a>
+                    <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/modificar">Modificar</a>
                 </li>
             </ul>
-            <form class="my-2 my-lg-0 " action="./../logout.php" method="GET">
+            <form class="my-2 my-lg-0 " action="/RegistroNuevoIngreso-ESCOM/src/administrador/logout.php" method="GET">
                 <button class="btn btn-outline-info" type="submit"><a class="nav-link">Cerrar Sesion</a></button>
             </form>
-
         </div>
     </nav>
     <!-- END Navbar -->
@@ -72,7 +71,7 @@
         <div id="fechas" class="row">
             <script>
                 $.ajax(
-                    'active_fechas.php',
+                    '/RegistroNuevoIngreso-ESCOM/src/administrador/reportes/active_fechas.php',
                     {
                         success: function (data) {
                             $('#fechas').html(data);
@@ -95,7 +94,7 @@
             fetch_graph();
             function fetch_graph(){
                 $.ajax(
-                    'graph_data.php',
+                    '/RegistroNuevoIngreso-ESCOM/src/administrador/reportes/graph_data.php',
                     {
                         type: "POST",
                         data: { "selector": selector,

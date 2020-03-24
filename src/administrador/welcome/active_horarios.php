@@ -1,5 +1,5 @@
 <?php
-    require_once('./../../mysqli_connect.php');
+    require_once('./../../../config/mysqli_connect.php');
     
     $sql = "select HoraInicio,HoraFin from horario;";
     $result = mysqli_query($conn,$sql);
