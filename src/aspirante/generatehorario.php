@@ -60,8 +60,10 @@ if(isset($_POST)){
                 //echo mysqli_error();
             }
         }else{
-            window.location
             echo "EL ALUMNO YA HA SIDO REGISTRADO";
+            header('Status: 301 Moved Permanently', false, 301);
+            header('Location: ./../../index.html');
+            exit();
             //echo mysqli_error();
         }        
     }
