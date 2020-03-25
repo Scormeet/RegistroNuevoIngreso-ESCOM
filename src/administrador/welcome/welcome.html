@@ -1,4 +1,5 @@
 <html>
+
 <head>
     <title>
         Bienvenido
@@ -34,8 +35,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link"
-                        href="/RegistroNuevoIngreso-ESCOM/administrador">Inicio<span
+                    <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador">Inicio<span
                             class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
@@ -46,20 +46,34 @@
                 </li>
             </ul>
             <form class="my-2 my-lg-0 " action="/RegistroNuevoIngreso-ESCOM/src/administrador/logout.php" method="GET">
-                <button class="btn btn-outline-info" type="submit"><a class="nav-link">Cerrar Sesion</a></button>
+                <button class="btn btn-outline-info" type="submit"><a class="nav-link">Cerrar Sesión</a></button>
             </form>
         </div>
     </nav>
     <!-- END Navbar -->
     <br />
     <div class="container">
-        <!-- <h1 class="display-4"> Bienvenido <b><?php echo $_SESSION['user']?></b></h1> -->
+        <h1 class="display-4"> Bienvenido <b id="administrador"></b></h1>
+        <script>
+            $.ajax(
+                './src/administrador/welcome/get_administrador.php',
+                {
+                    success: function (data) {
+                        $('#administrador').html(data);
+                    },
+                    error: function () {
+                        alert('There was some error performing the AJAX call!');
+                    }
+                }
+            );
+        </script>
+
     </div>
     <br />
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <h4>Examenes activos</h4>
+                <h4>Exámenes activos</h4>
                 <h3 style="color: red">
                     <div id="examenes"></div>
                     <script>
@@ -114,8 +128,8 @@
                     type="button">Configuración</button>
             </div>
             <div class="col-sm" align="center">
-                <h4>Examenes llenos<button
-                        onclick="location.href = '/RegistroNuevoIngreso-ESCOM/administrador/reportes/index.html';"
+                <h4>Exámenes llenos<button
+                        onclick="location.href = '/RegistroNuevoIngreso-ESCOM/src/administrador/reportes/index.html';"
                         class="btn">&nbsp;&nbsp;Ver más</button></h4> <br />
                 <canvas id="barChar" width="350" height="300"></canvas>
             </div>
@@ -173,4 +187,5 @@
             }
         </script>
 </body>
+
 </html>

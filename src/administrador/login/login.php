@@ -22,5 +22,5 @@
         } else 
             echo "Datos no valido";
     } else
-        echo "que haces aqui perro";
+        echo header("Location: /RegistroNuevoIngreso-ESCOM/login");;
 ?>
