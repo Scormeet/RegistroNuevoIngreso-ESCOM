@@ -1,0 +1,206 @@
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+@font-face {
+	font-family: Poppins-Regular;
+	src: url('../fonts/poppins/Poppins-Regular.ttf'); 
+  }
+  
+  @font-face {
+	font-family: Poppins-Medium;
+	src: url('../fonts/poppins/Poppins-Medium.ttf'); 
+  }
+  
+  @font-face {
+	font-family: Poppins-Bold;
+	src: url('../fonts/poppins/Poppins-Bold.ttf'); 
+  }
+  
+  
+  
+  
+  /*//////////////////////////////////////////////////////////////////
+  [ RESTYLE TAG ]*/
+  
+  * {
+	  margin: 0px; 
+	  padding: 0px; 
+	  box-sizing: border-box;
+  }
+  
+  body, html {
+	  height: 100%;
+	  font-family: Poppins-Regular, sans-serif;
+  }
+  
+  /*---------------------------------------------*/
+  a {
+	  font-family: Poppins-Regular;
+	  font-size: 14px;
+	  line-height: 1.7;
+	  color: #666666;
+	  margin: 0px;
+	  transition: all 0.4s;
+	  -webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+  }
+  
+  a:focus {
+	  outline: none !important;
+  }
+  
+  a:hover {
+	  text-decoration: none;
+	  color: #57b846;
+  }
+  
+  /*---------------------------------------------*/
+  h1,h2,h3,h4,h5,h6 {
+	  margin: 0px;
+  }
+  
+  p {
+	  font-family: Poppins-Regular;
+	  font-size: 14px;
+	  line-height: 1.7;
+	  color: #666666;
+	  margin: 0px;
+  }
+  
+  ul, li {
+	  margin: 0px;
+	  list-style-type: none;
+  }
+  
+  
+  /*---------------------------------------------*/
+  input {
+	  outline: none;
+	  border: none;
+  }
+  
+  textarea {
+	outline: none;
+	border: none;
+  }
+  
+  textarea:focus, input:focus {
+	border-color: transparent !important;
+  }
+  
+  input:focus::-webkit-input-placeholder { color:transparent; }
+  input:focus:-moz-placeholder { color:transparent; }
+  input:focus::-moz-placeholder { color:transparent; }
+  input:focus:-ms-input-placeholder { color:transparent; }
+  
+  textarea:focus::-webkit-input-placeholder { color:transparent; }
+  textarea:focus:-moz-placeholder { color:transparent; }
+  textarea:focus::-moz-placeholder { color:transparent; }
+  textarea:focus:-ms-input-placeholder { color:transparent; }
+  
+  input::-webkit-input-placeholder { color: #999999; }
+  input:-moz-placeholder { color: #999999; }
+  input::-moz-placeholder { color: #999999; }
+  input:-ms-input-placeholder { color: #999999; }
+  
+  textarea::-webkit-input-placeholder { color: #999999; }
+  textarea:-moz-placeholder { color: #999999; }
+  textarea::-moz-placeholder { color: #999999; }
+  textarea:-ms-input-placeholder { color: #999999; }
+  
+  /*---------------------------------------------*/
+  button {
+	  outline: none !important;
+	  border: none;
+	  background: transparent;
+  }
+  
+  button:hover {
+	  cursor: pointer;
+  }
+  
+  iframe {
+	  border: none !important;
+  }
+  
+  
+  
+  
+  
+  /*//////////////////////////////////////////////////////////////////
+  [ Contact 2 ]*/
+  .bg-contact2 {
+	width: 100%;  
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+  }
+  
+  .container-contact2 {
+	width: 100%;  
+	min-height: 100vh;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	padding: 15px;
+	background: rgba(219,21,99,0.8);
+	background: -webkit-linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8));
+	background: -o-linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8));
+	background: -moz-linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8));
+	background: linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8));
+  }
+  
+  .wrap-contact2 {
+	width: 790px;
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	padding: 72px 55px 90px 55px;
+  }
+  
+  
+  /*------------------------------------------------------------------
+  [  ]*/
+  
+  .contact2-form {
+	width: 100%;
+  }
+  
+  .contact2-form-title {
+	display: block;
+	font-family: Poppins-Bold;
+	font-size: 39px;
+	color: #333333;
+	line-height: 1.2;
+	text-align: center;
+	padding-bottom: 90px;
+  }
+  
+.title{
+	text-align: center;
+	padding-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.escudo1{
+	float: left;
+  }
+  
+  .escudo2{
+	  padding-top: 20px;
+	float: right;
+  }
+
+
+  
