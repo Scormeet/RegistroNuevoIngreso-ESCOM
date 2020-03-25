@@ -28,6 +28,14 @@
             else
                 header("Location: /RegistroNuevoIngreso-ESCOM/login");
             break;
+
+        case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/horarios' :
+            if(isset($_SESSION['user']))
+            require __DIR__ . '/src/administrador/modificar/horarios.php';
+            else
+                header("Location: /RegistroNuevoIngreso-ESCOM/login");
+            break;    
+
         case '/RegistroNuevoIngreso-ESCOM/administrador/reportes' :
             if(isset($_SESSION['user']))
                 require __DIR__ . '/src/administrador/reportes/index.html';
@@ -40,6 +48,8 @@
             else
                 header("Location: /RegistroNuevoIngreso-ESCOM/login");
             break;
+
+
 
         // Rutas de direccionamiento
         case '/RegistroNuevoIngreso-ESCOM' :
@@ -64,6 +74,8 @@
         case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/' :
             header("Location: /RegistroNuevoIngreso-ESCOM/administrador/modificar");
             break;
+         
+    
 
         // Ruta 404 para una ruta no valida
         default:

@@ -76,9 +76,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/RegistroNuevoIngreso-ESCOM/administrador/modificar/">Modificar</a>
                 </li>
-            </ul>
-            <form class="my-2 my-lg-0 " action="./../logout.php" method="GET">
-                <button class="btn btn-outline-info" type="submit"><a class="nav-link">Cerrar Sesion</a></button>
+                </ul>
+            <form class="my-2 my-lg-0 " action="/RegistroNuevoIngreso-ESCOM/src/administrador/logout.php" method="GET">
+                <button class="btn btn-outline-info" type="submit"><a class="nav-link">Cerrar Sesión</a></button>
             </form>
 
         </div>
@@ -92,7 +92,7 @@
         <h1 class="display-4">Horarios Actuales&nbsp; &nbsp;<i class></i></h1>
     </div>
 <?php
-    require_once('./../../mysqli_connect.php');
+    require_once('/RegistroNuevoIngreso-ESCOM/config/mysqli_connect.php');
     
     //Obtiene las fechas que se haran el examen
     $sql = "select * from horario;";
