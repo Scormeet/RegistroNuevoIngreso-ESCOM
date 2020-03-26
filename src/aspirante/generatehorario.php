@@ -43,7 +43,22 @@ if(isset($_POST)){
             date_default_timezone_set('America/Mexico_City');
             setlocale(LC_TIME, 'es_MX.UTF-8');
             $Fecha_registro=date("Y-m-d H:i:s");
-            $idexamen=100;
+
+            $sql = "SELECT idexamen FROM examen WHERE inscritos>=0 AND inscritos<50;";
+            $result = mysqli_query($conn,$sql);
+            $resultCheck = mysqli_num_rows($result);
+            $examenarray= array();
+            if($resultCheck>0){
+                while($row = mysqli_fetch_assoc($result)){
+                    //echo $row["idexamen"];
+                    array_push($examenarray,$row["idexamen"]);
+                }
+                shuffle( $examenarray );
+                $idexamen=(int)$examenarray[0];
+                //echo $idprueba;
+            } else echo "Ninguno";
+
+            //$idexamen=100;
             //echo gettype($nombre),gettype($curp),$fnacimiento,gettype($fnacimiento),gettype($idexamen);
             mysqli_stmt_bind_param($stmt,"sssssssssisdsssssissi",$nombre,$paterno,$materno,$curp,$fecha_nac,$lugar_nac,$sexo,$cyn,$colonia,$cp,$delegacion,$telefono,$email,$ins_proc,$ent_proc,$escuela,$area,$promedio,$eleccion,$Fecha_registro,$idexamen);
             //echo "entraste";

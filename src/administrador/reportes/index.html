@@ -99,7 +99,7 @@
                         type: "POST",
                         data: { "selector": selector,
                                 "scrollNumber": window.pageYOffset || document.documentElement.scrollTop },
-                        success: function (response) {
+                            success: function (response) {
                             var JSONresponse = JSON.parse(response);
                             console.log(JSONresponse);
                             $('#graph').html(JSONresponse["table"]);

@@ -28,6 +28,19 @@
             else
                 header("Location: /RegistroNuevoIngreso-ESCOM/login");
             break;
+
+        case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/horarios' :
+            if(isset($_SESSION['user']))
+            require __DIR__ . '/src/administrador/modificar/horarios.php';
+            else
+                header("Location: /RegistroNuevoIngreso-ESCOM/login");
+            break;    
+        case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/borar' :
+            if(isset($_SESSION['user']))
+            require __DIR__ . '/src/administrador/modificar/borar.php';
+            else
+                    header("Location: /RegistroNuevoIngreso-ESCOM/login");
+                break;
         case '/RegistroNuevoIngreso-ESCOM/administrador/reportes' :
             if(isset($_SESSION['user']))
                 require __DIR__ . '/src/administrador/reportes/index.html';
@@ -75,6 +88,7 @@
         case '/RegistroNuevoIngreso-ESCOM/getpdf' :
             require __DIR__ . '/src/aspirante/pdf/getpdf.php';
             break;
+        // Ruta 404 para una ruta no valida
         default:
              // Ruta 404 para una ruta no valida
             http_response_code(404);
