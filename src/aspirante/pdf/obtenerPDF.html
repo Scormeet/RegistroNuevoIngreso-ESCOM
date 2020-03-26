@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <title>
+        404
+    </title>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/RegistroNuevoIngreso-ESCOM/images/logo-escom-white.png" />
+    <link rel="stylesheet" type="text/css" href="/RegistroNuevoIngreso-ESCOM/vendor/bootstrap/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+
+<body>
+    <div>
+
+        <form>
+            <label>Ingrese el id para buscar a ese wey xd</label>
+            <input type="text" name="id"></input>
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="errorMessage"></div>
+        <script>
+            $(function () {
+                $('form').bind('submit', function () {
+                    $.ajax({
+                        type: 'POST',
+                        url: '/RegistroNuevoIngreso-ESCOM/getpdf',
+                        data: $('form').serialize(),
+                        success: function (response) {
+                            var responseJSON = JSON.parse(response);
+                            if(responseJSON["success"]){
+                                    $(location).attr('href', responseJSON["success"]);
+                            }else if(responseJSON["errorMessage"]){
+                                $('#errorMessage').html(responseJSON["errorMessage"]);
+                            }
+                        },
+                        error: function () {
+                            alert('There was some error performing the AJAX call!');
+                        }
+                    });
+                    return false;
+                });
+            });
+        </script>
+    </div>
+</body>
+
+</html>
