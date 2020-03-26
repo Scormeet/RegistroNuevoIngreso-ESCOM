@@ -166,6 +166,7 @@
 	border-radius: 10px;
 	overflow: hidden;
 	padding: 72px 55px 90px 55px;
+	margin-bottom: 30px;
   }
   
   
@@ -202,5 +203,91 @@
 	float: right;
   }
 
+  .container-contact2-form-btn{
+	width: 100%;
+	position: relative;
+	margin-left: 10px;
+  }
 
+/*------------------------------------------------------------------
+[ Button ]*/
+.container-contact2-form-btn {
+	border-radius: 20px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-top: 13px;
+	margin-bottom: 20px;
+	margin-left: -220px;
+  }
   
+  .wrap-contact2-form-btn {
+	display: block;
+	position: relative;
+	z-index: 1;
+	border-radius: 2px;
+	width: auto;
+	overflow: hidden;
+	margin: 0 auto;
+  }
+  
+  .contact2-form-bgbtn {
+	position: absolute;
+	z-index: -1;
+	width: 300%;
+	height: 100%;
+	background: rgba(219,21,99,1);
+	background: -webkit-linear-gradient(-135deg, #1179db, #800735, #1179db, #800735);
+	background: -o-linear-gradient(-135deg, #1179db, #800735, #1179db, #800735);
+	background: -moz-linear-gradient(-135deg, #1179db, #800735, #1179db, #800735);
+	background: linear-gradient(-135deg, #1179db, #800735, #1179db, #800735);
+	top: 0;
+	left: -100%;
+  
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	transition: all 0.4s;
+  }
+  
+  .contact2-form-btn {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 20px;
+	min-width: 244px;
+	height: 50px;
+	font-family: Poppins-Medium;
+	font-size: 16px;
+	color: #fff;
+	line-height: 1.2;
+  
+  }
+  
+  .g-recaptcha{
+	width: 600px;
+  }
+  
+  .wrap-contact2-form-btn:hover .contact2-form-bgbtn {
+	left: 0;
+  }
+
+  .iconStudent{
+	  margin-top: -175px;
+	  margin-right: 50px;
+	  float: right;
+  }
+
+  .iconServer{
+	margin-top: -125px;
+	margin-right: 50px;
+	float: right;
+}
