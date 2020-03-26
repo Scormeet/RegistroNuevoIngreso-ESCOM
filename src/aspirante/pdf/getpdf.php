@@ -14,7 +14,6 @@
         } 
         else 
             $error = "Aspirante no encontrado";
-        
         echo json_encode( array (
         'success' => $success,
         'errorMessage' => $error,
