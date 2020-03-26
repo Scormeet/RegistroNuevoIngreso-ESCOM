@@ -35,7 +35,12 @@
             else
                 header("Location: /RegistroNuevoIngreso-ESCOM/login");
             break;    
-
+        case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/borar' :
+            if(isset($_SESSION['user']))
+            require __DIR__ . '/src/administrador/modificar/borar.php';
+            else
+                    header("Location: /RegistroNuevoIngreso-ESCOM/login");
+                break;
         case '/RegistroNuevoIngreso-ESCOM/administrador/reportes' :
             if(isset($_SESSION['user']))
                 require __DIR__ . '/src/administrador/reportes/index.html';
