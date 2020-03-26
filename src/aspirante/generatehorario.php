@@ -44,7 +44,7 @@ if(isset($_POST)){
             setlocale(LC_TIME, 'es_MX.UTF-8');
             $Fecha_registro=date("Y-m-d H:i:s");
 
-            $sql = "SELECT idexamen FROM examen WHERE inscritos>=0 AND inscritos<50;";
+            $sql = "SELECT idexamen FROM examen WHERE inscritos>=0 AND inscritos<30;";
             $result = mysqli_query($conn,$sql);
             $resultCheck = mysqli_num_rows($result);
             $examenarray= array();
