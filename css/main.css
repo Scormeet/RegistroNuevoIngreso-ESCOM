@@ -483,7 +483,16 @@ textarea.input2 + .focus-input2::after {
 }
 
 .g-recaptcha{
-  width: 600px;
+  margin-left: 33.5%;
+  margin-right: auto;
+}
+
+@media (max-width: 800px){
+  .g-recaptcha{
+    size: 50px;
+    margin-left: 10%;
+    margin-right: auto;
+  }
 }
 
 .wrap-contact2-form-btn:hover .contact2-form-bgbtn {
