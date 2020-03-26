@@ -154,10 +154,10 @@
 	align-items: center;
 	padding: 15px;
 	background: rgba(219,21,99,0.8);
-	background: -webkit-linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8));
-	background: -o-linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8));
-	background: -moz-linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8));
-	background: linear-gradient(45deg, rgba(213,0,125,0.8), rgba(229,57,53,0.8));
+	background: -webkit-linear-gradient(45deg, rgba(169, 224, 81, 0.8), rgba(51, 172, 202, 0.8));
+	background: -o-linear-gradient(45deg, rgba(169, 224, 81, 0.8), rgba(51, 172, 202, 0.8));
+	background: -moz-linear-gradient(45deg, rgba(169, 224, 81, 0.8), rgba(51, 172, 202, 0.8));
+	background: linear-gradient(45deg, rgba(169, 224, 81, 0.8), rgba(51, 172, 202, 0.8));
   }
   
   .wrap-contact2 {
@@ -241,10 +241,10 @@
 	width: 300%;
 	height: 100%;
 	background: rgba(219,21,99,1);
-	background: -webkit-linear-gradient(-135deg, #1179db, #800735, #1179db, #800735);
-	background: -o-linear-gradient(-135deg, #1179db, #800735, #1179db, #800735);
-	background: -moz-linear-gradient(-135deg, #1179db, #800735, #1179db, #800735);
-	background: linear-gradient(-135deg, #1179db, #800735, #1179db, #800735);
+	background: -webkit-linear-gradient(-135deg,rgba(169, 224, 81, 0.8), rgba(51, 172, 202, 0.8),rgba(169, 224, 81, 0.8), rgba(51, 172, 202, 0.8));
+	background: -o-linear-gradient(-135deg,rgba(169, 224, 81, 0.8), rgba(51, 172, 202, 0.8),rgba(169, 224, 81, 0.8), rgba(51, 172, 202, 0.8));
+	background: -moz-linear-gradient(-135deg,rgba(169, 224, 81, 0.8), rgba(51, 172, 202, 0.8),rgba(169, 224, 81, 0.8), rgba(51, 172, 202, 0.8));
+	background: linear-gradient(-135deg,rgba(169, 224, 81, 0.8), rgba(51, 172, 202, 0.8),rgba(169, 224, 81, 0.8), rgba(51, 172, 202, 0.8));
 	top: 0;
 	left: -100%;
   
