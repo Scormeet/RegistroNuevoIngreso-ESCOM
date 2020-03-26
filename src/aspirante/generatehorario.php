@@ -1,7 +1,7 @@
 <?php
-//Require necesario para hacer cualquier tipo de operacion en la BD
+
 if(isset($_POST)){
-    //print_r($_POST);
+    
     $nombre=$_POST["name"];
     $paterno=$_POST["namep"];
     $materno=$_POST["namem"];
@@ -31,7 +31,7 @@ if(isset($_POST)){
             $sql = "select * from aspirantes where CURP='".$curp."';";
             $result = mysqli_query($conn,$sql);
             $resultCheck = mysqli_num_rows($result);
-            //echo $nombre;
+            
             if($resultCheck==0){
 
             $sql = "INSERT INTO Aspirantes(Nombre,paterno,materno,CURP,Fecha_nac,lugar_nac,sexo,cyn,colonia,cp,delegacion,telefono,email,ins_proc,ent_proc,escuela,area,promedio,eleccion,Fecha_registro,Examen_idExamen) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
@@ -50,18 +50,15 @@ if(isset($_POST)){
             $examenarray= array();
             if($resultCheck>0){
                 while($row = mysqli_fetch_assoc($result)){
-                    //echo $row["idexamen"];
+                    
                     array_push($examenarray,$row["idexamen"]);
                 }
                 shuffle( $examenarray );
                 $idexamen=(int)$examenarray[0];
-                //echo $idprueba;
+                
             } else echo "Ninguno";
 
-            //$idexamen=100;
-            //echo gettype($nombre),gettype($curp),$fnacimiento,gettype($fnacimiento),gettype($idexamen);
             mysqli_stmt_bind_param($stmt,"sssssssssisdsssssissi",$nombre,$paterno,$materno,$curp,$fecha_nac,$lugar_nac,$sexo,$cyn,$colonia,$cp,$delegacion,$telefono,$email,$ins_proc,$ent_proc,$escuela,$area,$promedio,$eleccion,$Fecha_registro,$idexamen);
-            //echo "entraste";
             mysqli_stmt_execute($stmt);
             $affected_rows = mysqli_stmt_affected_rows($stmt);
 
@@ -72,16 +69,14 @@ if(isset($_POST)){
 
             } else{
                 echo "Error en agregar el Alumno";
-                //echo mysqli_error();
             }
         }else{
             echo "EL ALUMNO YA HA SIDO REGISTRADO";
             header('Status: 301 Moved Permanently', false, 301);
             header('Location: ./../../index.html');
             exit();
-            //echo mysqli_error();
         }        
     }
 }
-            //require_once('./../../mysqli_connect.php');
+            
 ?>

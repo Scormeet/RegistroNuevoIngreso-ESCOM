@@ -19,7 +19,7 @@
         <button class=" navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-        </button>
+        </button>   
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
@@ -41,6 +41,7 @@
 
         </div>
     </nav>
+    <!-- end navbar-->
 <br />
     <div class="container" align="center">
         <h1 class="display-4">MODIFICAR&nbsp; &nbsp;<i class="fas fa-edit"></i></h1>
@@ -53,7 +54,7 @@
                 <button class="btn btn-warning" onclick="location.href = '/RegistroNuevoIngreso-ESCOM/administrador/modificar/horarios';" type="button">GRUPOS</button>
             </div>
             <div class="col-sm" align="center">
-                <button class="btn btn-warning" onclick="location.href = '/RegistroNuevoIngreso-ESCOM/administrador/modificar/horarios';" type="button">HORARIOS</button>
+                <button class="btn btn-warning" onclick="cargarDatos();" type="button">HORARIOS</button>
             </div>
             <div class="col-sm" align="center">
                 <button class="btn btn-warning" onclick="location.href = '/RegistroNuevoIngreso-ESCOM/administrador/modificar/horarios';" type="button">ASPIRANTES</button>
@@ -61,7 +62,42 @@
         </div>
     </div>
     <br />
-    
+    <div class="container">
+        <div id="horario" class="row">
+            
+            <script>
+                function cargarDatos(){
+                   
+                $.ajax(
+                    '/RegistroNuevoIngreso-ESCOM/src/administrador/modificar/horarios.php',
+                    {
+                        success: function (data) {
+                            $('#horario').html(data);
+                        },
+                        error: function () {
+                            alert('There was some error performing the AJAX call!');
+                        }
+                    }
+                );
+                }
+                /*$.ajax(
+                    '/RegistroNuevoIngreso-ESCOM/src/administrador/modificar/modifica.php',
+                    {
+                        success: function (data) {
+                            $('#horario').html(data);
+                        },
+                        error: function () {
+                            alert('There was some error performing the AJAX call!');
+                        }
+                    }
+                );
+                // setInterval(function () {
+                    // $('#fechas').load("active_fechas.php").fadeIn("slow");
+                // }, 100);*/
+            </script>
+        </div>
+    </div>
+    <br />
 
 
 

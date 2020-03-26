@@ -35,7 +35,12 @@
             else
                 header("Location: /RegistroNuevoIngreso-ESCOM/login");
             break;    
-
+        case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/borar' :
+            if(isset($_SESSION['user']))
+            require __DIR__ . '/src/administrador/modificar/borar.php';
+            else
+                    header("Location: /RegistroNuevoIngreso-ESCOM/login");
+                break;
         case '/RegistroNuevoIngreso-ESCOM/administrador/reportes' :
             if(isset($_SESSION['user']))
                 require __DIR__ . '/src/administrador/reportes/index.html';
@@ -49,16 +54,13 @@
                 header("Location: /RegistroNuevoIngreso-ESCOM/login");
             break;
 
-
-
-        // Rutas de direccionamiento
+        // Rutas de direccionamiento POST and NO ONE
         case '/RegistroNuevoIngreso-ESCOM' :
             require __DIR__ . '/index.html';
             break;
         case '/RegistroNuevoIngreso-ESCOM/login/' :
             header("Location: /RegistroNuevoIngreso-ESCOM/login");
             break;
-
         case '/RegistroNuevoIngreso-ESCOM/aspirante/' :
             header("Location: /RegistroNuevoIngreso-ESCOM/aspirante");
             break;
@@ -74,11 +76,21 @@
         case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/' :
             header("Location: /RegistroNuevoIngreso-ESCOM/administrador/modificar");
             break;
-         
-    
-
+        case '/RegistroNuevoIngreso-ESCOM/pdfP' :
+            require __DIR__ . '/pdf/registar.html';
+            break;
+            case '/RegistroNuevoIngreso-ESCOM/aspirante/pdfG' :
+                require __DIR__ . '/src/aspirante/pdf/obtenerPDF.html';
+                break;
+        case '/RegistroNuevoIngreso-ESCOM/savepdf' :
+            require __DIR__ . '/pdf/savepdf.php';
+            break;
+        case '/RegistroNuevoIngreso-ESCOM/getpdf' :
+            require __DIR__ . '/src/aspirante/pdf/getpdf.php';
+            break;
         // Ruta 404 para una ruta no valida
         default:
+             // Ruta 404 para una ruta no valida
             http_response_code(404);
             require __DIR__ . '/src/404.html';
             break;
