@@ -19,9 +19,7 @@
         case '/RegistroNuevoIngreso-ESCOM/aspirante' :
             require __DIR__ . '/src/aspirante/index.html';
             break;
-        case '/RegistroNuevoIngreso-ESCOM/prueba' :
-            require __DIR__ . '/src/aspirante/pdf/generatepdf.php';
-            break;
+            
         // Rutas que necesitan una sesion para acceder como administrador
         case '/RegistroNuevoIngreso-ESCOM/administrador/modificar' :
             if(isset($_SESSION['user']))

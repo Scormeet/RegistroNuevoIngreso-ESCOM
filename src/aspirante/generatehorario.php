@@ -69,10 +69,7 @@
                             $fecha = $row["fecha"];
                         }
                     } 
-                    //Encriptado
-
-                    //END
-                        
+                    $hash = hash('md5', $curp);
                     //Generador de PDF del examen al aspirante
                     require_once("./../../src/aspirante/pdf/generatepdf.php");
                     $pdf = new myPDF();
@@ -83,7 +80,7 @@
                     $pdf->AliasNbPages();
                     $pdf->AddPage('L','A4',0);
                     $pdf->body();
-                    $pdf->Output('F', './../../uploads/'.$curp.'.pdf');
+                    $pdf->Output('F', './../../uploads/'.$hash.'.pdf');
                 } else{
                     echo "Error en agregar el Alumno";
                 }

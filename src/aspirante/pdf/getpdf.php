@@ -3,12 +3,9 @@
         $id = $_POST['id'];
         $success = "";
         $error = "";
+        $hash = hash('md5', $id);
         
-        //Aplicar algun hash para el CURP
-
-        //FIN
-        
-        $nombre_fichero = "uploads/".$id.".pdf";
+        $nombre_fichero = "uploads/".$hash.".pdf";
         if (file_exists($nombre_fichero)) {
             $success = "/RegistroNuevoIngreso-ESCOM/".$nombre_fichero;
         } 
