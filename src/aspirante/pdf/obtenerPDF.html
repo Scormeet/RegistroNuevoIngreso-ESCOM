@@ -1,47 +1,67 @@
 <html>
-
 <head>
     <title>
-        404
+        Consulta
     </title>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="/RegistroNuevoIngreso-ESCOM/images/logo-escom-white.png" />
     <link rel="stylesheet" type="text/css" href="/RegistroNuevoIngreso-ESCOM/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/RegistroNuevoIngreso-ESCOM/css/bienvenida.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
-    <div>
-
-        <form>
-            <label>Ingrese el id para buscar a ese wey xd</label>
-            <input type="text" name="id"></input>
-            <button type="submit">Enviar</button>
-        </form>
-        <div id="errorMessage"></div>
-        <script>
-            $(function () {
-                $('form').bind('submit', function () {
-                    $.ajax({
-                        type: 'POST',
-                        url: '/RegistroNuevoIngreso-ESCOM/getpdf',
-                        data: $('form').serialize(),
-                        success: function (response) {
-                            var responseJSON = JSON.parse(response);
-                            if(responseJSON["success"]){
-                                    $(location).attr('href', responseJSON["success"]);
-                            }else if(responseJSON["errorMessage"]){
-                                $('#errorMessage').html(responseJSON["errorMessage"]);
-                            }
-                        },
-                        error: function () {
-                            alert('There was some error performing the AJAX call!');
-                        }
-                    });
-                    return false;
-                });
-            });
-        </script>
+    <div class="escudo1">
+        <img src="/RegistroNuevoIngreso-ESCOM/images/LOGOTIPO_IPN.png" height=150px>
+    </div>
+    <div class="escudo2">
+        <img src="/RegistroNuevoIngreso-ESCOM/images/logoescom.png" width=150px>
+    </div>
+    <h1 class="title">Bienvenido</h1> <br />
+    <div class="bg-contact2" style="background-image: url('/RegistroNuevoIngreso-ESCOM/images/bg-01.jpg');">
+        <div class="container-contact2">
+            <div class="wrap-contact2">
+                <section class="hero">
+                    <div class="hero-content">
+                        <a class="link " href="/RegistroNuevoIngreso-ESCOM/">Regresar</a>
+                        <br/>
+                        <br/>
+                        <h1>Consultar examen</h1>
+                        <form>
+                            <label>CURP</label>
+                            <input class="form-control" type="text" name="id" required></input>
+                            <br/>
+                            <button class="btn btn-primary" type="submit">Enviar</button>
+                        </form>
+                        <br/>
+                        <div id="errorMessage" style="color: red"></div>
+                        <script>
+                            $(function () {
+                                $('form').bind('submit', function () {
+                                    $.ajax({
+                                        type: 'POST',
+                                        url: '/RegistroNuevoIngreso-ESCOM/getpdf',
+                                        data: $('form').serialize(),
+                                        success: function (response) {
+                                            var responseJSON = JSON.parse(response);
+                                            if (responseJSON["success"]) {
+                                                $(location).attr('href', responseJSON["success"]);
+                                            } else if (responseJSON["errorMessage"]) {
+                                                $('#errorMessage').html(responseJSON["errorMessage"]);
+                                            }
+                                        },
+                                        error: function () {
+                                            alert('There was some error performing the AJAX call!');
+                                        }
+                                    });
+                                    return false;
+                                });
+                            });
+                        </script>
+                    </div>
+                </section>
+            </div>
+        </div>
     </div>
 </body>
 
