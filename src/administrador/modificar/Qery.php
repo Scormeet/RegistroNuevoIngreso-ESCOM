@@ -14,7 +14,12 @@
         return db_query($sql);
     }
 
+    function insertaHorar($h1,$h2){
     
+        $sql = "insert into horarios (HoraInicio, HoraFin )values (".$h1.",".$h2.")"."";
+        
+        return db_query($sql);
+    }
     function select_id($tblname,$field_name,$field_id){
         $sql = "Select * from ".$tblname." where ".$field_name." = ".$field_id."";
         $db=db_query($sql);
@@ -23,5 +28,6 @@
         return $sql;
     
     }
+
 
 ?>

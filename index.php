@@ -23,17 +23,29 @@
         // Rutas que necesitan una sesion para acceder como administrador
         case '/RegistroNuevoIngreso-ESCOM/administrador/modificar' :
             if(isset($_SESSION['user']))
-            require __DIR__ . '/src/administrador/modificar/index.php';
+            require __DIR__ . '/src/administrador/modificar/index.html';
             else
                 header("Location: /RegistroNuevoIngreso-ESCOM/login");
             break;
 
         case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/horarios' :
-            if(isset($_SESSION['user']))
+            
             require __DIR__ . '/src/administrador/modificar/horarios.php';
-            else
-                header("Location: /RegistroNuevoIngreso-ESCOM/login");
-            break;    
+            
+            break; 
+            
+            
+        case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/formhorario' :
+            
+            require __DIR__ . '/src/administrador/modificar/formulariohorario.php';
+                
+             break;
+
+        case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/jack' :
+            
+            require __DIR__ . '/src/administrador/modificar/Jack.php';
+                
+             break;
         case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/borar' :
             if(isset($_SESSION['user']))
             require __DIR__ . '/src/administrador/modificar/borar.php';
