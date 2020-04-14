@@ -81,6 +81,8 @@
                     $pdf->AddPage('L','A4',0);
                     $pdf->body();
                     $pdf->Output('F', './../../uploads/'.$hash.'.pdf');
+                    header('Location: ./../..//uploads/'.$hash.'.pdf');
+
                 } else{
                     echo "Error en agregar el Alumno";
                 }
