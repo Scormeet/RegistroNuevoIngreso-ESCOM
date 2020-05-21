@@ -20,6 +20,9 @@
         
         return db_query($sql);
     }
+
+    
+
     function select_id($tblname,$field_name,$field_id){
         $sql = "Select * from ".$tblname." where ".$field_name." = ".$field_id."";
         $db=db_query($sql);

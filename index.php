@@ -41,11 +41,31 @@
                 
              break;
 
-        case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/jack' :
+        case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/inserthorario.php' :
             
-            require __DIR__ . '/src/administrador/modificar/Jack.php';
+            require __DIR__ . '/src/administrador/modificar/inserthorario.php';
                 
              break;
+
+             ////
+             case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/grupos' :
+            
+                require __DIR__ . '/src/administrador/modificar/grupos.php';
+                
+                break; 
+                
+                
+            case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/formsalon' :
+                
+                require __DIR__ . '/src/administrador/modificar/formulariosalon.php';
+                    
+                 break;
+    
+            case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/insertsalon.php' :
+                
+                require __DIR__ . '/src/administrador/modificar/insertgrupo.php';
+                    
+                 break;
         case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/borar' :
             if(isset($_SESSION['user']))
             require __DIR__ . '/src/administrador/modificar/borar.php';

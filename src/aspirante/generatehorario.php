@@ -23,7 +23,7 @@
         if($nombre && $paterno && $materno && $fecha_nac && $lugar_nac && $sexo && $curp && $cyn && $colonia
             && $cp && $delegacion && $telefono && $email && $ins_proc && $ent_proc && $escuela && $area 
             && $promedio && $eleccion) {
-                require_once('./../../config/mysqli_connect.php');
+                require_once(' require_once(./../../../config/mysqli_connect.php');
                 $sql = "select * from aspirantes where CURP='".$curp."';";
                 $result = mysqli_query($conn,$sql);
                 $resultCheck = mysqli_num_rows($result);

@@ -74,7 +74,7 @@
                     '/RegistroNuevoIngreso-ESCOM/src/administrador/modificar/horarios.php',
                     {
                         success: function (data) {
-                            $('#horario').html(data);
+                            $('#tabla').html(data);
                             //cargarDatosAsesinos(id);
 
                         },
@@ -89,7 +89,7 @@
                     '/RegistroNuevoIngreso-ESCOM/src/administrador/modificar/formulariohorario.php',
                         {
                          success: function (data) {
-                          $('#horario').html(data);
+                          $('#tabla').html(data);
                         },
                     error: function () {
                    alert('There was some error performing the AJAX call!');
@@ -98,19 +98,7 @@
                  );
                 }
 
-                function cargarAspirantes(id){
-                $.ajax(
-                    '/RegistroNuevoIngreso-ESCOM/src/administrador/modificar/Jack.php',
-                    {
-                        success: function (data) {
-                            $('#horario').html(data);
-                        },
-                        error: function () {
-                            alert('There was some error performing the AJAX call!');
-                        }
-                    }
-                );
-                }
+                
 
 
                </script>       
@@ -144,7 +132,7 @@ function cargarSalon(){
                        '/RegistroNuevoIngreso-ESCOM/src/administrador/modificar/salon.php',
                        {
                            success: function (data) {
-                               $('#horario').html(data);
+                               $('#tabla').html(data);
                                //cargarDatosAsesinos(id);
    
                            },
@@ -175,13 +163,32 @@ function cargarSalonBorrar(id){
   );
   }
 
+  function BorrarAspirante(id){
+    console.log(id);
+  
+  $.ajax(
+    '/RegistroNuevoIngreso-ESCOM/src/administrador/modificar/borrarAsp.php',
+      {
+        
+        type: "POST",
+        data: 'id='+id,
+        
+          success: function (data) {
+              $('#horario').html(data);
+          },
+          error: function () {
+              alert('There was some error performing the AJAX call!');
+          }
+      }
+  );
+  }
   function DespliegaFormsalon(){
                    
                    $.ajax(
                        '/RegistroNuevoIngreso-ESCOM/src/administrador/modificar/formulariosalon.php',
                        {
                            success: function (data) {
-                               $('#horario').html(data);
+                               $('#tabla').html(data);
                                //cargarDatosAsesinos(id);
    
                            },
@@ -213,6 +220,24 @@ function cargarSalonBorrar(id){
         });
 </script>
 
+
+    </div>
+<div id="tabla">
+<script>
+    function cargarAspirantes(id){
+        $.ajax(
+            '/RegistroNuevoIngreso-ESCOM/src/administrador/modificar/aspirantes.php',
+            {
+                success: function (data) {
+                    $('#tabla').html(data);
+                },
+                error: function () {
+                    alert('There was some error performing the AJAX call!');
+                }
+            }
+        );
+        }
+    </script>
 
     </div>
     <br />

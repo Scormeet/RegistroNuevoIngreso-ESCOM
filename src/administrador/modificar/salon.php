@@ -24,28 +24,20 @@ echo "<br>";
 
        echo  "<div>";
        while($row = mysqli_fetch_assoc($result)){
-           //$fechasArray[]=$row;
-           /*echo  "<div>";
-               echo "<div class='columna1' align='center'>".$row ["idHorario"]."</div>";
-               echo "<div  class='columna1' align='center'>".$row ["HoraInicio"]."</div>";
-               echo "<div class='columna1' align='center'>".$row ["HoraFin"]."</div>";
-               echo "<div class='columna1' align='center'><a  href='/RegistroNuevoIngreso-ESCOM/src/administrador/modificar/borar.php?id=".$row["idHorario"]."'> <img src='/RegistroNuevoIngreso-ESCOM/images/1.png' width='30' height='30' >";
-           echo "</div>";
-
-           */
-
-
+           
 echo "<tr>";
    echo" <td>".$row ["idSalon"]."</td>";
     echo "<td align='center'>" .$row ["Salon"]. "</td>";
-   // echo "<td align='center'>".$row ["HoraFin"]."</td>";
     echo "<td align='center'> <img src='/RegistroNuevoIngreso-ESCOM/images/1.png' onclick=cargarSalonBorrar(".$row["idSalon"]."); width='30' height='30' > </td>";
 echo "</tr>"; 
            
            $cont++;
        }
+
       echo "</div>";
+      
    } else echo "Sin salones";
 echo "<br/>";
+
 
 ?>
