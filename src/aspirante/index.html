@@ -37,7 +37,7 @@
 				<div class="escudo2">
 					<img src="images/logoescom.png" width=150px>
 				</div>
-				<form method="POST" action="./src/aspirante/generatehorario.php" class="contact2-form validate-form">
+				<form method="POST" action="./src/aspirante/generatehorario.php" class="contact2-form validate-form" onsubmit="return miFuncion(this)">
 					<span class="titulo1">
 						Instituto Politécnico Nacional
 					</span>
@@ -267,6 +267,21 @@
 			</div>
 		</div>
 	</div>
+	
+	<script>
+		function miFuncion(a) {
+			var response = grecaptcha.getResponse();
+
+			if (response.length == 0) {
+				alert("Captcha no verificado");
+				return false;
+				event.preventDefault();
+			} else {
+
+				return true;
+			}
+		}
+	</script>
 
 	<!--===============================================================================================-->
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
