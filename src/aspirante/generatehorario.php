@@ -47,14 +47,13 @@
                     shuffle( $examenarray );
                     $idexamen=(int)$examenarray[0];
                     
-                } else echo "Ninguno";
+                };
 
                 mysqli_stmt_bind_param($stmt,"sssssssssisdsssssissi",$nombre,$paterno,$materno,$curp,$fecha_nac,$lugar_nac,$sexo,$cyn,$colonia,$cp,$delegacion,$telefono,$email,$ins_proc,$ent_proc,$escuela,$area,$promedio,$eleccion,$Fecha_registro,$idexamen);
                 mysqli_stmt_execute($stmt);
                 $affected_rows = mysqli_stmt_affected_rows($stmt);
             
                 if($affected_rows == 1){
-                    echo "Alumno Registrado Exitosamente";
                     mysqli_stmt_close($stmt);
                     $sql = "select fecha,salon,horaInicio,horaFin from examen INNER JOIN salon on examen.Salon_idSalon=salon.idSalon INNER JOIN fecha ON examen.Fecha_idFecha = fecha.idFecha INNER JOIN horario ON examen.Horario_idHorario = horario.idHorario where idExamen = ".$idexamen.";";
                     $result = mysqli_query($conn,$sql);
@@ -81,15 +80,17 @@
                     $pdf->AddPage('L','A4',0);
                     $pdf->body();
                     $pdf->Output('F', './../../uploads/'.$hash.'.pdf');
-                    header('Location: ./../..//uploads/'.$hash.'.pdf');
 
-                } else{
-                    echo "Error en agregar el Alumno";
+                    echo json_encode( array (
+                        'nombre'=> $nombre." ".$paterno." ".$materno,
+                        'salon' => $salon,
+                        'horario' => $horario,
+                        'fecha' => $fecha
+                    ));
+                    // header('Location: ./../..//uploads/'.$hash.'.pdf');
                 }
             }else{
-                echo "EL ALUMNO YA HA SIDO REGISTRADO";
-                header('Status: 301 Moved Permanently', false, 301);
-                // header('Location: ./../../index.html');
+                echo "registrado";
                 exit();
             }        
         }
