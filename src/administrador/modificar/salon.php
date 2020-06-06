@@ -28,7 +28,7 @@ echo "<br>";
 echo "<tr>";
    echo" <td>".$row ["idSalon"]."</td>";
     echo "<td align='center'>" .$row ["Salon"]. "</td>";
-    echo "<td align='center'> <img src='/RegistroNuevoIngreso-ESCOM/images/1.png' onclick=cargarSalonBorrar(".$row["idSalon"]."); width='30' height='30' > </td>";
+    echo "<td align='center'> <img src='/RegistroNuevoIngreso-ESCOM/images/1.png' onclick=alerta2(".$row["idSalon"]."); width='30' height='30' > </td>";
 echo "</tr>"; 
            
            $cont++;

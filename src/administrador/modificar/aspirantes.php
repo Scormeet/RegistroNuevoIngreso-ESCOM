@@ -87,7 +87,7 @@ echo "<tr>";
     echo "<td align='center'>" .$row ["eleccion"]. "</td>";       
     echo "<td align='center'>".$row ["Examen_idExamen"]."</td>";
     
-    echo "<td align='center'> <img src='/RegistroNuevoIngreso-ESCOM/images/1.png' onclick=BorrarAspirante('".$row["CURP"]."'); width='30' height='30' > </td>";
+    echo "<td align='center'> <img src='/RegistroNuevoIngreso-ESCOM/images/1.png' onclick=alerta3('".$row["CURP"]."'); width='30' height='30' > </td>";
 echo "</tr>"; 
            
            $cont++;

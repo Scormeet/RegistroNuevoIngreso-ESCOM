@@ -108,7 +108,7 @@
   
 function EliminarHorario(id){
     console.log(id);
-  
+
   $.ajax(
     '/RegistroNuevoIngreso-ESCOM/src/administrador/modificar/borar.php',
       {
@@ -118,6 +118,7 @@ function EliminarHorario(id){
         
           success: function (data) {
               $('#horario').html(data);
+             alert('Se ha borrado el horario');
           },
           error: function () {
               alert('There was some error performing the AJAX call!');
@@ -125,7 +126,22 @@ function EliminarHorario(id){
       }
   );
   }
-
+  
+  
+function alerta(id)
+    {
+    var mensaje;
+    var opcion = confirm("¿Desea eliminar Horario? Considere que puede haber un Salon asignado y alumnos si elimina, borrara todo");
+    if (opcion == true) {
+        mensaje="Se ha eliminado";
+        EliminarHorario(id)
+        
+	} else {
+	    mensaje = "Has clickado Cancelar";
+	}
+	
+}
+  
 function cargarSalon(){
                    
                    $.ajax(
@@ -142,7 +158,26 @@ function cargarSalon(){
                        }
                    );
                    }
-
+function insertarSalon(Salon){
+    console.log(Salon);
+  
+  $.ajax(
+    '/RegistroNuevoIngreso-ESCOM/src/administrador/modificar/inserthorario.php',
+      {
+        
+        type: "POST",
+        data: 'Salon='+Salon,
+        
+          success: function (data) {
+              $('#horario').html(data);
+              alert('Se ha borrado el salon');
+          },
+          error: function () {
+              alert('There was some error performing the AJAX call!');
+          }
+      }
+  );
+  }
 function cargarSalonBorrar(id){
     console.log(id);
   
@@ -155,6 +190,7 @@ function cargarSalonBorrar(id){
         
           success: function (data) {
               $('#horario').html(data);
+              alert('Se ha borrado el salon');
           },
           error: function () {
               alert('There was some error performing the AJAX call!');
@@ -162,6 +198,20 @@ function cargarSalonBorrar(id){
       }
   );
   }
+  function alerta2(id)
+    {
+    var mensaje;
+    var opcion = confirm("¿Desea eliminar Salon? Considere que puede haber un horario de examen y alumnos si elimina borrara, todo");
+    if (opcion == true) {
+        mensaje="Se ha eliminado";
+        cargarSalonBorrar(id)
+        
+	} else {
+	    mensaje = "Ha cancelado";
+	}
+	
+}
+
 
   function BorrarAspirante(id){
     console.log(id);
@@ -175,13 +225,29 @@ function cargarSalonBorrar(id){
         
           success: function (data) {
               $('#horario').html(data);
+              alert('Se ha borrado el aspirante');
           },
           error: function () {
               alert('There was some error performing the AJAX call!');
           }
       }
   );
+  
   }
+
+  function alerta3(id)
+    {
+    var mensaje;
+    var opcion = confirm("¿Desea eliminar Aspirante? Considere que si esta asignado a un examen se eliminara de todo");
+    if (opcion == true) {
+        mensaje="Se ha eliminado";
+        cargarSalonBorrar(id)
+        
+	} else {
+	    mensaje = "Ha cancelado";
+	}
+	
+}
   function DespliegaFormsalon(){
                    
                    $.ajax(
@@ -239,8 +305,17 @@ function cargarSalonBorrar(id){
         }
     </script>
 
+    <script>
+        function confirmar() {
+  confirm("Seguro que deseas eliminar");
+}
+    </script>
+
     </div>
     <br />
+
+ 
+    
 </body>
 
 

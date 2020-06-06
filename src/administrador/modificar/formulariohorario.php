@@ -4,16 +4,22 @@
         <form  class="shake"  method="POST" action="/RegistroNuevoIngreso-ESCOM/src/administrador/modificar/inserthorario.php">
         
             <div class="form-row">
+              
               <div class="col">
-                <input name= "inicio" type="text" class="form-control" placeholder="Hora de inicio">
+                <input type="time" required name="inicio" class="form-control" placeholder="Hora de inicio">
               </div>
               <div class="col">
-                <input name="final" type="text" class="form-control" placeholder="Hora de termino">
+                <input type="time" required name="final" class="form-control" placeholder="Hora de termino">
               </div>
             </div>
             <br>
             </br>
-            <button type="submit"   class="btn btn-success btn-lg pull-left"  align="right">Agregar</button>
+            <button type="submit"   class="btn btn-success btn-lg pull-left"  align="right" onclick="myFunct()">Agregar</button>
         </form>
+        <script>
+function myFunct() {
+  confirm("Seguro que deseas agregar horario");
+}
+</script>
     </div>
 

@@ -31,7 +31,7 @@ echo "<tr>";
    echo" <td>".$row ["idHorario"]."</td>";
     echo "<td align='center'>" .$row ["HoraInicio"]. "</td>";
     echo "<td align='center'>".$row ["HoraFin"]."</td>";
-    echo "<td align='center'> <img src='/RegistroNuevoIngreso-ESCOM/images/1.png' onclick=EliminarHorario(".$row["idHorario"]."); width='30' height='30' > </td>";
+    echo "<td align='center'> <img src='/RegistroNuevoIngreso-ESCOM/images/1.png' onclick=alerta(".$row["idHorario"]."); width='30' height='30' > </td>";
 echo "</tr>"; 
            
            $cont++;
@@ -39,6 +39,7 @@ echo "</tr>";
       echo "</div>";
    } else echo "Sin horarios";
 echo "<br/>";
+
 
 ?>
 

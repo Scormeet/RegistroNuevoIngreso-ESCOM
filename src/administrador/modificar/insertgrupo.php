@@ -2,6 +2,7 @@
 <script>alert("si estoy");</script>
     
     <?php
+       
         if(isset($_POST)){
             $g1 = $_POST["Salon"];
             //$h2 = $_POST["final"];

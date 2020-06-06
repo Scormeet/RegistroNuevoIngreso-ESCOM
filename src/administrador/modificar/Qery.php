@@ -1,7 +1,7 @@
 
 <?php
     function db_query($query) {
-        $connection = mysqli_connect("localhost","root","N0M3L0","ingreso");
+        $connection = mysqli_connect("localhost","nenemalo","jaiba","ingreso");
         $result = mysqli_query($connection,$query);
     
         return $result;

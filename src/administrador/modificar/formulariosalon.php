@@ -1,7 +1,7 @@
 
     <div class="well" align="left">
     <h3>Nuevo Salon</h3>
-        <form  class="shake"  method="POST" action="/RegistroNuevoIngreso-ESCOM/src/administrador/modificar/insertgrupo.php">
+        <form  class="shake"  method="POST" >
         
             <div class="form-row">
               <div class="col">
@@ -11,13 +11,30 @@
             </div>
             <br>
             </br>
-            <button type="submit"   class="btn btn-success btn-lg pull-left"  align="right" onclick="myFunction()">Agregar </button>
+            <button type="submit"   class="btn btn-success btn-lg pull-left"  align="right" onclick="nene()">Agregar </button>
         </form>
         <script>
-function myFunction() {
-  confirm("Seguro que deseas agregar salon");
+
+  function nene(){
+    var opcion = confirm("¿Desea agregar Salon?");
+    if (opcion == true) {
+        
+        mensaje="Se ha eliminado";
+        //var Salon=null;
+       // Salon=document.getElementsByName("Salon")[0].value;
+        //insertarSalon(Salon);
+        alert('se ha agregado'+Salon);
+        //action="/RegistroNuevoIngreso-ESCOM/src/administrador/modificar/insertgrupo.php";
+        
+	} else {
+      
+      alert('cancelado');
+	}  
+	
 }
-</script>
+    </script>
+
+
 
     </div>
 
