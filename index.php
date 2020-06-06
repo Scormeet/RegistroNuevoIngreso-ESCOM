@@ -3,7 +3,7 @@
     session_start();
     switch ($request) {
         // Rutas abiertas a todo tipo de usuario
-        case "/https://registro-nuevo-ingreso-escom.herokuapp.com/" :
+        case "/https://registro-nuevo-ingreso-escom.herokuapp.com" :
             require __DIR__ . '/index.html';
             break;
         case '/RegistroNuevoIngreso-ESCOM/login' :
