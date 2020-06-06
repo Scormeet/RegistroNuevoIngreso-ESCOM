@@ -3,7 +3,7 @@
     session_start();
     switch ($request) {
         // Rutas abiertas a todo tipo de usuario
-        case "/RegistroNuevoIngreso-ESCOM/" :
+        case "/https://registro-nuevo-ingreso-escom.herokuapp.com/" :
             require __DIR__ . '/index.html';
             break;
         case '/RegistroNuevoIngreso-ESCOM/login' :
@@ -55,16 +55,11 @@
                 break; 
                 
                 
-            case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/formsalon' :
-                
-                require __DIR__ . '/src/administrador/modificar/formulariosalon.php';
-                    
+            case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/formsalon' :            
+                require __DIR__ . '/src/administrador/modificar/formulariosalon.php';                
                  break;
-    
-            case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/insertsalon.php' :
-                
-                require __DIR__ . '/src/administrador/modificar/insertgrupo.php';
-                    
+            case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/insertsalon.php' :         
+                require __DIR__ . '/src/administrador/modificar/insertgrupo.php';             
                  break;
         case '/RegistroNuevoIngreso-ESCOM/administrador/modificar/borar' :
             if(isset($_SESSION['user']))
